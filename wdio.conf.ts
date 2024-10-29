@@ -1,4 +1,4 @@
-import allure from 'allure-commandline';
+import allure from "allure-commandline";
 export const config: WebdriverIO.Config = {
   //
   // ====================
@@ -54,6 +54,11 @@ export const config: WebdriverIO.Config = {
     {
       // capabilities for local browser web tests
       browserName: "chrome", // or "firefox", "microsoftedge", "safari"
+      acceptInsecureCerts: true,
+
+      "goog:chromeOptions": {
+        args: ["--headless", "--disable-gpu", "--disable-dev-shm-usage"],
+      },
     },
   ],
 
@@ -129,16 +134,16 @@ export const config: WebdriverIO.Config = {
   // see also: https://webdriver.io/docs/dot-reporter
   reporters: [
     "spec",
-    [ 
+    [
       "allure",
       {
         outputDir: "allure-results",
         disableWebdriverScreenshotsReporting: false,
         disableWebdriverStepsReporting: true,
-        //cho phép chụp ảnh màn hình khi có lỗi 
-        //bỏ qua các bước như click, setValue, để report chỉ báo cáo hiển thị cắc bước tự định nghĩa 
-        
-      },]
+        //cho phép chụp ảnh màn hình khi có lỗi
+        //bỏ qua các bước như click, setValue, để report chỉ báo cáo hiển thị cắc bước tự định nghĩa
+      },
+    ],
   ],
 
   // Options to be passed to Mocha.
@@ -295,7 +300,7 @@ export const config: WebdriverIO.Config = {
    */
   onComplete: function () {
     const reportError = new Error("Could not generate Allure report");
-    console.log(reportError.message)
+    console.log(reportError.message);
     const generation = allure(["generate", "allure-results", "--clean"]);
 
     return new Promise<void>((resolve, reject) => {
