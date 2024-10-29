@@ -1,4 +1,4 @@
-import { $, browser } from "@wdio/globals";
+import { $ } from "@wdio/globals";
 import Page from "../page";
 import { expect } from "chai";
 import ErrorType from "../../data/errorType";
