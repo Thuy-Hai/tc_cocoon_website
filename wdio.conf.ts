@@ -150,7 +150,7 @@ export const config: WebdriverIO.Config = {
   mochaOpts: {
     ui: "bdd",
     timeout: 60000,
-    retries: 2,
+    // retries: 2,
   },
 
   //
