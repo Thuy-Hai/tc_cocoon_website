@@ -1,4 +1,4 @@
-import allure from "allure-commandline";
+import allure from 'allure-commandline';
 export const config: WebdriverIO.Config = {
   //
   // ====================
@@ -54,11 +54,6 @@ export const config: WebdriverIO.Config = {
     {
       // capabilities for local browser web tests
       browserName: "chrome", // or "firefox", "microsoftedge", "safari"
-      acceptInsecureCerts: true,
-
-      "goog:chromeOptions": {
-        args: ["--headless", "--disable-gpu", "--disable-dev-shm-usage"],
-      },
     },
   ],
 
@@ -109,10 +104,7 @@ export const config: WebdriverIO.Config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: [
-    ["visual", { drivers: { chrome: "130.0.6723.70" } }],
-    ["selenium-standalone", { drivers: { chrome: true } }],
-  ],
+  services: ["visual"],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -137,16 +129,16 @@ export const config: WebdriverIO.Config = {
   // see also: https://webdriver.io/docs/dot-reporter
   reporters: [
     "spec",
-    [
+    [ 
       "allure",
       {
         outputDir: "allure-results",
         disableWebdriverScreenshotsReporting: false,
         disableWebdriverStepsReporting: true,
-        //cho phép chụp ảnh màn hình khi có lỗi
-        //bỏ qua các bước như click, setValue, để report chỉ báo cáo hiển thị cắc bước tự định nghĩa
-      },
-    ],
+        //cho phép chụp ảnh màn hình khi có lỗi 
+        //bỏ qua các bước như click, setValue, để report chỉ báo cáo hiển thị cắc bước tự định nghĩa 
+        
+      },]
   ],
 
   // Options to be passed to Mocha.
@@ -303,7 +295,7 @@ export const config: WebdriverIO.Config = {
    */
   onComplete: function () {
     const reportError = new Error("Could not generate Allure report");
-    console.log(reportError.message);
+    console.log(reportError.message)
     const generation = allure(["generate", "allure-results", "--clean"]);
 
     return new Promise<void>((resolve, reject) => {
