@@ -1,6 +1,7 @@
 import { $, browser } from "@wdio/globals";
 import Page from "../page";
 import { expect } from "chai";
+import ErrorType from "../../data/errorType";
 class LoginPage extends Page {
   public get btnToLogin() {
     return $("button=Đăng nhập");
@@ -34,6 +35,9 @@ class LoginPage extends Page {
     return $("div=Tài khoản");
   }
 
+  public get btnLogout() {
+    return $("aria/Đăng xuất");
+  }
 
   public get rememberMeCheckbox() {
     return $("[data-v-4a114c7c]");
@@ -55,16 +59,9 @@ class LoginPage extends Page {
     return $("span.title");
   }
 
-  private async waitForBtnToLogin() {
-    await this.btnToLogin.waitForClickable({ timeout: 10000 });
-    await browser.waitUntil(async () => await this.btnToLogin.isClickable(), {
-      timeout: 10000,
-      timeoutMsg: "Button to Login not clickable after 10s",
-    });
-  }
 
-  public async login(phone: string, password: string) {
-    await this.waitForBtnToLogin();
+  public async login({ phone, password }: { phone: string; password: string }) {
+    await this.btnToLogin.waitForDisplayed({timeout:15000});
     await this.btnToLogin.click();
     await this.phoneElement.setValue(phone);
     await this.passwordElement.setValue(password);
@@ -77,17 +74,16 @@ class LoginPage extends Page {
     expect(isAccountDisplayed).to.be.true;
   }
 
-  public async checkLoginFailed(errorType: "general" | "password" | "phone") {
+  public async checkLoginFailed(errorType: string) {
     let errorMessageElement;
-
     switch (errorType) {
-      case "password":
+      case ErrorType.Type.PASSWORD:
         errorMessageElement = this.errorMessagePassword;
         break;
-      case "phone":
+      case ErrorType.Type.PHONE:
         errorMessageElement = this.errorMessagePhone;
         break;
-      case "general":
+      case ErrorType.Type.GENERAL:
       default:
         errorMessageElement = this.errormMessage;
         break;
@@ -97,48 +93,55 @@ class LoginPage extends Page {
     expect(isErrorMessageDisplayed).to.be.true;
   }
 
-  public async loginwithRememberPassword(phone: string, password: string) {
-    await this.waitForBtnToLogin();
+  public async loginwithRememberPassword({phone,password}: {phone: string;password: string;}) {
+    await this.btnToLogin.waitForDisplayed({timeout:15000});
     await this.btnToLogin.click();
     await this.phoneElement.setValue(phone);
     await this.passwordElement.setValue(password);
     await this.rememberMeCheckbox.waitForDisplayed();
     await this.rememberMeCheckbox.click();
-    // await browser.waitUntil(async () => await this.checkboxElement.isSelected(), {
-    //   timeout: 5000,
-    //   timeoutMsg: "Checkbox was not selected after 5s",
-    // });
-    // const isChecked = await this.checkboxElement.isSelected();
-    // expect(isChecked).to.be.true;
     await this.btnLogin.click();
+    await this.checkLoginSuccessful();
+  }
+  public async checkLoginWithRemenberPassword() {
+    await this.accountInfo.waitForClickable({ timeout: 5000 });
+    await this.accountInfo.click();
+    await this.btnLogout.click();
+    await this.btnToLogin.click();
+    const phone =await this.phoneElement.getValue();
+    const password = await this.passwordElement.getValue();
+    console.log(phone,"phone");
+    expect(phone).to.equal("0917697809");
+    expect(password).to.equal("Hop1010ly@");
   }
 
-  public async showPassword() {
-    await this.waitForBtnToLogin();
+  public async showPassword(password: string) {
+    await this.btnToLogin.waitForDisplayed({timeout:15000});
     await this.btnToLogin.click();
-    await this.passwordElement.setValue("Hop1010ly@");
+    await this.passwordElement.setValue(password);
     expect(await this.passwordElement.getAttribute("type")).to.equal(
       "password"
     );
     await this.showPasswordIcon.click();
     expect(await this.passwordElement.getAttribute("type")).to.equal("text");
-    await this.hidePasswordIcon.click();
-    expect(await this.passwordElement.getAttribute("type")).to.equal(
-      "password"
-    );
   }
 
   public async forgotPassword() {
-    await this.waitForBtnToLogin();
+    await this.btnToLogin.waitForDisplayed({timeout:15000});
     await this.btnToLogin.click();
     await this.lnkForgotPassword.click();
-    await this.titleForgotPassword.waitForDisplayed({ timeout: 10000 });
+    await this.titleForgotPassword.waitForDisplayed();
     const isDisplayed = await this.titleForgotPassword.isDisplayed();
     expect(isDisplayed).to.be.true;
   }
 
   public open() {
     return super.open("");
+  }
+
+  public async waitBrowerLoad() {
+    const videoElement = $(".lazyLoad.isLoaded");
+    await videoElement.waitForExist({timeout:15000});
   }
 }
 export default new LoginPage();

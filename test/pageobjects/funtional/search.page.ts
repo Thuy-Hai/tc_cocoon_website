@@ -20,7 +20,7 @@ class SearchPage extends Page {
   }
 
   public get suggestionElement() {
-    return $("aria/Sữa rửa mặt");
+    return $("aria/Nước tẩy trang");
   }
 
   private async waitForSearchButtonClickable() {
@@ -46,14 +46,14 @@ class SearchPage extends Page {
   }
 
   public async checkMessageNotFoundDisplayed() {
-    await this.messageNotFound.waitForDisplayed();
+    await this.messageNotFound.waitForDisplayed({ timeout: 5000 });
     const isMessegeNotFoundDisplay = await this.messageNotFound.isDisplayed();
     expect(isMessegeNotFoundDisplay).to.be.true;
   }
 
   public async checkInputIsEmpty() {
-    const divText = await this.productList.isDisplayed();
-    expect(divText).to.be.true;
+    const isProductListDisplayed = await this.productList.isDisplayed();
+    expect(isProductListDisplayed).to.be.true;
     const isMessegeNotFoundDisplay = await this.messageNotFound.isDisplayed();
     expect(isMessegeNotFoundDisplay).to.be.false;
   }
@@ -64,9 +64,6 @@ class SearchPage extends Page {
     await this.suggestionElement.click();
   }
 
-  public async removeProductFromCart() {
-    
-  }
   public open() {
     return super.open("");
   }

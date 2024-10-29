@@ -1,36 +1,36 @@
 import searchPage from "../pageobjects/funtional/search.page";
 import allureReporter from "@wdio/allure-reporter";
-
-describe("  search function", function () {
-  beforeEach("should open the website before search", async () => {
-    allureReporter.addFeature("Feature before search");
-    await searchPage.open();
+import searchData from "../data/searchData";
+describe("search function", function () {
+  beforeEach("open website before search", async () => {
+    allureReporter.addFeature("Setup: Open website");
+    searchPage.open();
   });
 
-  afterEach(async () => {
+  afterEach("Clear session data", async () => {
     await browser.execute(() => localStorage.clear());
     await browser.deleteCookies();
   });
-  it('should search successful with input "Sữa rửa mặt"', async () => {
+  it("verify search successful with valid input", async () => {
     allureReporter.addFeature("Feature search with input valid");
-    await searchPage.searchProduct("Sữa rửa mặt");
-    await searchPage.checkIfContainsProductName("Sữa rửa mặt");
+    await searchPage.searchProduct(searchData.listData.validData);
+    await searchPage.checkIfContainsProductName(searchData.listData.validData);
   });
 
-  it('should search failed with input "ssss"', async () => {
+  it("verify search failed with invalid input ", async () => {
     allureReporter.addFeature("Feature search with input invalid");
-    await searchPage.searchProduct("ssss");
+    await searchPage.searchProduct(searchData.listData.invalidData);
     await searchPage.checkMessageNotFoundDisplayed();
   });
-  it("should search failed with input empty", async () => {
+  it("verify search failed with empty input", async () => {
     allureReporter.addFeature("Feature search with input empty");
-    await searchPage.searchProduct("");
+    await searchPage.searchProduct(searchData.listData.emptyData);
     await searchPage.checkInputIsEmpty();
   });
 
-  it("should search successful with suggestion", async () => {
-    allureReporter.addFeature("Feature search with seggestion");
+  it("verify search successful with suggestion", async () => {
+    allureReporter.addFeature("Feature search with suggestion");
     await searchPage.searchBySuggestion();
-    await searchPage.checkIfContainsProductName("Sữa rửa mặt");
+    await searchPage.checkIfContainsProductName(searchData.listData.sussgestionData);
   });
 });
