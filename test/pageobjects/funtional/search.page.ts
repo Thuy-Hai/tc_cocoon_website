@@ -27,7 +27,7 @@ class SearchPage extends Page {
     await browser.waitUntil(
       async () => await this.btnIconSearch.isClickable(),
       {
-        timeout: 60000,
+        timeout: 10000,
         timeoutMsg: "Button to search not clickable after 25s",
       }
     );
