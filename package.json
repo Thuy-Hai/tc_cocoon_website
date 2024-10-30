@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio run ./wdio.conf.ts",
-    "wdio": "wdio run ./wdio.conf.ts",
+    "wdio": "wdio run ./wdio.conf.ts --spec ./test/specs/search.specs.ts",
     "report":"allure generate allure-results && allure open"
   },
   "keywords": [],

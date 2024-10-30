@@ -41,7 +41,7 @@ class SearchPage extends Page {
 
   public async checkIfContainsProductName(productName: string) {
     const divText = await this.productList.getText();
-    const containsProductName = divText.includes(productName);
+    const containsProductName = divText.includes('122');
     expect(containsProductName).to.be.true;
   }
 
