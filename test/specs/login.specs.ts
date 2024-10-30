@@ -2,8 +2,8 @@ import loginPage from "../pageobjects/authentication/login.page";
 import loginData from "../data/loginData";
 
 describe("Login function on home page", () => {
-  beforeEach("Open Home Page", async () => {
-    await loginPage.open();
+  beforeEach("Open Home Page", () => {
+     loginPage.open();
   });
 
 

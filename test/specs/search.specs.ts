@@ -1,7 +1,7 @@
 import searchPage from "../pageobjects/funtional/search.page";
 import searchData from "../data/searchData";
 describe("search function", function () {
-  beforeEach("open website before search", async () => {
+  beforeEach("open website before search", () => {
     searchPage.open();
     
   });
