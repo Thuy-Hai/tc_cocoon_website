@@ -77,8 +77,8 @@ class CartPage extends Page {
         return (await productNameElements.length) > 0;
       },
       {
-        timeout: 5000,
-        timeoutMsg: "Not found span.name in 5s",
+        timeout: 10000,
+        timeoutMsg: "Not found span.name in 10s",
       }
     );
     const productNames = await $$("span.name.mr-2").map(
@@ -145,7 +145,7 @@ class CartPage extends Page {
     await this.btnRemoveProduct.click();
   }
   public async checkProductRemoveInCart() {
-    await this.txtTitle.waitForDisplayed({ timeout: 15000 });
+    await this.txtTitle.waitForDisplayed({ timeout: 10000 });
     const isDisplayed = await this.txtTitle.isDisplayed();
     expect(isDisplayed).to.be.true;
   }

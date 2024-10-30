@@ -12,7 +12,7 @@ describe("Add to Cart Functionality",  () => {
     await addToCartPage.addToCartTwice();
     await addToCartPage.checkQuantityProduct(2);
   });
-  it("verify fail to add out of stock product to cart", async () => {
+  it("Verify out of stock product cannot be added to cart", async () => {
     await addToCartPage.addOutOfStockProductToCart();
     await addToCartPage.CheckAddToCartFail();
   });

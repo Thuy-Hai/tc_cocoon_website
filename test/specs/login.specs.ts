@@ -6,10 +6,7 @@ describe("Login function on home page", () => {
     await loginPage.open();
   });
 
-  it("verify login successfully with correct phone and password", async () => {
-    await loginPage.login(loginData.correctPhoneAndPassword);
-    await loginPage.checkLoginSuccessful();
-  });
+
   it("verify login failed with wrong phone number and correct password", async () => {
     await loginPage.login(loginData.wrongPhoneAndCorrectPassword);
     await loginPage.checkLoginFailed();
@@ -47,6 +44,10 @@ describe("Login function on home page", () => {
   it("verify show a forgot password page", async () => {
     await loginPage.forgotPassword();
     await loginPage.checkForgotPasswordSuccess();
+  });
+  it("verify login successfully with correct phone and password", async () => {
+    await loginPage.login(loginData.correctPhoneAndPassword);
+    await loginPage.checkLoginSuccessful();
   });
 
   afterEach("Clear Session Data",  () => {

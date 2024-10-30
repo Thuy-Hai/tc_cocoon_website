@@ -44,16 +44,14 @@ class SearchPage extends Page {
 
   public async checkMessageNotFoundDisplayed() {
     await this.messageNotFoundProduct.waitForDisplayed({ timeout: 5000 });
-    const isMessegeNotFoundDisplay =
-      await this.messageNotFoundProduct.isDisplayed();
+    const isMessegeNotFoundDisplay =await this.messageNotFoundProduct.isDisplayed();
     expect(isMessegeNotFoundDisplay).to.be.true;
   }
 
   public async checkInputIsEmpty() {
     const isProductListDisplayed = await this.productList.isDisplayed();
     expect(isProductListDisplayed).to.be.true;
-    const isMessegeNotFoundDisplay =
-      await this.messageNotFoundProduct.isDisplayed();
+    const isMessegeNotFoundDisplay = await this.messageNotFoundProduct.isDisplayed();
     expect(isMessegeNotFoundDisplay).to.be.false;
   }
 
