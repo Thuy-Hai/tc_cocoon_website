@@ -1,5 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","4487","verify search failed with empty input","","Wed Oct 30 12:31:54 ICT 2024","passed","Wed Oct 30 12:31:58 ICT 2024","","search function","",""
-"","16877","verify search successful with valid input","","Wed Oct 30 12:31:30 ICT 2024","failed","Wed Oct 30 12:31:47 ICT 2024","","search function","",""
-"","6576","verify search failed with invalid input ","","Wed Oct 30 12:31:47 ICT 2024","passed","Wed Oct 30 12:31:54 ICT 2024","","search function","",""
-"","13280","verify search successful with suggestion","","Wed Oct 30 12:31:58 ICT 2024","failed","Wed Oct 30 12:32:11 ICT 2024","","search function","",""
