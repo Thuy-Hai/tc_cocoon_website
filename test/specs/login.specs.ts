@@ -21,7 +21,7 @@ describe("Login function on home page", () => {
 
   it("verify login failed with correct phone and invalid password  ", async () => {
     await loginPage.login(loginData.correctPhoneAndInvalidPassword);
-    await loginPage.checkLoginFailed();
+    await loginPage.checkInvalidPasswordError();
   });
   it("verify login failed with invalid phone and correct password", async () => {
     await loginPage.login(loginData.invalidPhoneAndCorrectPassword);
