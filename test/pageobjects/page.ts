@@ -4,6 +4,7 @@ export default class Page {
 
   public async openAndWait() {
     await browser.url(`https://cocoonvietnam.com/`);
+    await browser.fullscreenWindow();
     const videoElement = $(".lazyLoad.isLoaded");
     await videoElement.waitForExist({ timeout: 15000 });
   }
