@@ -24,13 +24,10 @@ class SearchPage extends Page {
   }
 
   private async waitForSearchButtonClickable() {
-    await browser.waitUntil(
-      async () => await this.iconSearch.isClickable(),
-      {
-        timeout: 10000,
-        timeoutMsg: "Button to search not clickable after 10s",
-      }
-    );
+    await browser.waitUntil(async () => await this.iconSearch.isClickable(), {
+      timeout: 10000,
+      timeoutMsg: "Button to search not clickable after 10s",
+    });
   }
 
   public async searchProduct(input: string) {
@@ -41,20 +38,22 @@ class SearchPage extends Page {
 
   public async checkIfContainsProductName(productName: string) {
     const divText = await this.productList.getText();
-    const containsProductName = divText.includes('122');
+    const containsProductName = divText.includes(productName);
     expect(containsProductName).to.be.true;
   }
 
   public async checkMessageNotFoundDisplayed() {
     await this.messageNotFoundProduct.waitForDisplayed({ timeout: 5000 });
-    const isMessegeNotFoundDisplay = await this.messageNotFoundProduct.isDisplayed();
+    const isMessegeNotFoundDisplay =
+      await this.messageNotFoundProduct.isDisplayed();
     expect(isMessegeNotFoundDisplay).to.be.true;
   }
 
   public async checkInputIsEmpty() {
     const isProductListDisplayed = await this.productList.isDisplayed();
     expect(isProductListDisplayed).to.be.true;
-    const isMessegeNotFoundDisplay = await this.messageNotFoundProduct.isDisplayed();
+    const isMessegeNotFoundDisplay =
+      await this.messageNotFoundProduct.isDisplayed();
     expect(isMessegeNotFoundDisplay).to.be.false;
   }
 
