@@ -1,26 +1,26 @@
 class LoginData {
-    phoneNPasswordCorrect = {
+    correctPhoneAndPassword = {
         phone: "0917697809",
         password:"Hop1010ly@",
     }
 
-    wrongPhoneNcorrectPassword = {
+    wrongPhoneAndCorrectPassword = {
         phone: "0958734753",
         password:"Hop1010ly@",
     }
-    correctPhoneNwrongPassword = {
+    correctPhoneAndWrongPassword = {
         phone: "0917697809",
         password:"Hop1010ly",
     }
-    correctPhoneNinvalidPassword= {
+    correctPhoneAndInvalidPassword= {
         phone: "0917697809",
         password: "acc",
     }
-    invalidPhoneNcorrectPassword = {
+    invalidPhoneAndCorrectPassword = {
         phone: "091397809",
         password: "Hop1010ly@",
     }
-    invalidPhoneNinvalidPassword = {
+    invalidPhoneAnddPassword = {
         phone: "123",
         password: "abc",
     }

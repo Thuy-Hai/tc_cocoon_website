@@ -54,10 +54,10 @@ export const config: WebdriverIO.Config = {
     {
       // capabilities for local browser web tests
       browserName: "chrome", // or "firefox", "microsoftedge", "safari"
-      acceptInsecureCerts: true,
-      'goog:chromeOptions': {
-        args:['--headless','--disable-gpu','--no-sandbox','--disable-dev-shm-usage']
-      }
+      // acceptInsecureCerts: true,
+      // 'goog:chromeOptions': {
+      //   args:['--headless','--disable-gpu','--no-sandbox','--disable-dev-shm-usage']
+      // }
     },
   ],
 
@@ -137,10 +137,10 @@ export const config: WebdriverIO.Config = {
       "allure",
       {
         outputDir: "allure-results",
+        disableWebdriverStepsReporting: false,
         disableWebdriverScreenshotsReporting: false,
-        disableWebdriverStepsReporting: true,
-        //cho phép chụp ảnh màn hình khi có lỗi
-        //bỏ qua các bước như click, setValue, để report chỉ báo cáo hiển thị cắc bước tự định nghĩa
+        disableMochaStepReporting: true,
+        
       },
     ],
   ],
@@ -247,15 +247,13 @@ export const config: WebdriverIO.Config = {
    * @param {boolean} result.passed    true if test has passed, otherwise false
    * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
    */
-  afterTest: async function (
-    test,
-    context,
-    { error, result, duration, passed, retries }
-  ) {
+  afterTest: async function(test, context, { error, result, duration, passed, retries }) {
     if (!passed) {
-      await browser.takeScreenshot();
+        await browser.takeScreenshot();
     }
   },
+
+
 
   /**
    * Hook that gets executed after the suite has ended
