@@ -3,6 +3,7 @@ import searchData from "../data/searchData";
 describe("search function", function () {
   beforeEach("open website before search", async () => {
     searchPage.open();
+    
   });
 
   it("verify search successful with valid input", async () => {
