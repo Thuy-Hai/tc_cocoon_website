@@ -18,7 +18,7 @@ jobs:
         env:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-        run: npm run wdio -- --spec ./test/specs/*.js
+        run: npm run wdio
 
       # - name: Test
       #   run: npm run wdio
