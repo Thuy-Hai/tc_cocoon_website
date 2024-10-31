@@ -14,8 +14,14 @@ jobs:
       - name: Set WebdriverIO permissions
         run: chmod +x ./node_modules/.bin/*
 
-      - name: Test
+      - name: Run WebdriverIO tests on Sauce Labs
+        env:
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
         run: npm run wdio
+
+      # - name: Test
+      #   run: npm run wdio
       - uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:

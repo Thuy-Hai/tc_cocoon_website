@@ -60,7 +60,7 @@ class LoginPage extends Page {
   }
 
   public async login({ phone, password }: { phone: string; password: string }) {
-    await this.btnToLoginPage.waitForDisplayed({ timeout: 15000 });
+    await this.btnToLoginPage.waitForClickable({ timeout: 15000 });
     await this.btnToLoginPage.click();
     await this.inputPhoneElement.setValue(phone);
     await this.inputPasswordElement.setValue(password);

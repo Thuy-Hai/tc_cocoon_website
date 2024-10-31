@@ -23,15 +23,9 @@ class SearchPage extends Page {
     return $("aria/Nước tẩy trang");
   }
 
-  private async waitForSearchButtonClickable() {
-    await browser.waitUntil(async () => await this.iconSearch.isClickable(), {
-      timeout: 10000,
-      timeoutMsg: "Button to search not clickable after 10s",
-    });
-  }
-
+  
   public async searchProduct(input: string) {
-    await this.waitForSearchButtonClickable();
+    await this.iconSearch.waitForClickable({timeout:10000});
     await this.iconSearch.click();
     await this.inputSearch.setValue(input);
   }
@@ -56,7 +50,7 @@ class SearchPage extends Page {
   }
 
   public async searchBySuggestion() {
-    await this.waitForSearchButtonClickable();
+    await this.iconSearch.waitForClickable({timeout:10000});
     await this.iconSearch.click();
     await this.txtSuggestion.click();
   }

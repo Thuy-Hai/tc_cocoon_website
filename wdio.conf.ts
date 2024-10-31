@@ -30,7 +30,7 @@ export const config: WebdriverIO.Config = {
   ],
   //
   // ============
-  // Capabilities
+
   // ============
   // Define your capabilities here. WebdriverIO can run multiple capabilities at the same
   // time. Depending on the number of capabilities, WebdriverIO launches several test
@@ -44,20 +44,40 @@ export const config: WebdriverIO.Config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 10,
+  maxInstances: 5,
+
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
   // https://saucelabs.com/platform/platform-configurator
   //
+
   capabilities: [
+    // {
+    //   // capabilities for local browser web tests
+    //   browserName: "chrome", // or "firefox", "microsoftedge", "safari"
+    //   // acceptInsecureCerts: true,
+    //   // 'goog:chromeOptions': {
+    //   //   args:['--headless','--disable-gpu','--no-sandbox','--disable-dev-shm-usage']
+    //   // }
+    // },
     {
-      // capabilities for local browser web tests
-      browserName: "chrome", // or "firefox", "microsoftedge", "safari"
-      acceptInsecureCerts: true,
-      'goog:chromeOptions': {
-        args:['--headless','--disable-gpu','--no-sandbox','--disable-dev-shm-usage']
-      }
+      browserName: "chrome",
+      platformName: "Windows 11",
+      browserVersion: "latest",
+      "sauce:options": {
+        name: "My Test",
+        build: "Build 1",
+        screenResolution: "1600x1200",
+      },
+      "goog:chromeOptions": {
+        args: [
+          "--headless",
+          "--disable-gpu",
+          "--no-sandbox",
+          "--disable-dev-shm-usage",
+        ],
+      },
     },
   ],
 
@@ -68,7 +88,7 @@ export const config: WebdriverIO.Config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: "info",
+  logLevel: "debug",
   //
   // Set specific log levels per logger
   // loggers:
@@ -92,7 +112,7 @@ export const config: WebdriverIO.Config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  // baseUrl: 'http://localhost:8080',
+  // baseUrl: "http://localhost:8080",
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,
@@ -103,12 +123,25 @@ export const config: WebdriverIO.Config = {
   //
   // Default request retries count
   connectionRetryCount: 3,
+
   //
   // Test runner services
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: [["visual", { drivers: { browser: "130.0.6723.58" } }]],
+
+  user: process.env.SAUCE_USERNAME,
+  key: process.env.SAUCE_ACCESS_KEY,
+  region: "eu",
+  services: [
+    ["visual", { drivers: { browser: "130.0.6723.58" } }],
+    [
+      "sauce",
+      {
+        sauceConnect: true,
+      },
+    ],
+  ],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -131,6 +164,7 @@ export const config: WebdriverIO.Config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
+
   reporters: [
     "spec",
     [
@@ -140,7 +174,6 @@ export const config: WebdriverIO.Config = {
         disableWebdriverStepsReporting: false,
         disableWebdriverScreenshotsReporting: false,
         disableMochaStepReporting: true,
-        
       },
     ],
   ],
@@ -247,13 +280,15 @@ export const config: WebdriverIO.Config = {
    * @param {boolean} result.passed    true if test has passed, otherwise false
    * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
    */
-  afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+  afterTest: async function (
+    test,
+    context,
+    { error, result, duration, passed, retries }
+  ) {
     if (!passed) {
-        await browser.takeScreenshot();
+      await browser.takeScreenshot();
     }
   },
-
-
 
   /**
    * Hook that gets executed after the suite has ended

@@ -62,6 +62,9 @@ class CartPage extends Page {
   public get btnToCartPage() {
     return $("aria/Giỏ hàng");
   }
+  public get listNameProduct() {
+    return  $$("span.name.mr-2");
+  }
 
   public async addToCartInCategory() {
     await this.btnProduct.click();
@@ -71,17 +74,8 @@ class CartPage extends Page {
   }
 
   public async checkAddToCartSuccess(expectedProductName: string) {
-    await browser.waitUntil(
-      async () => {
-        const productNameElements = $$("span.name.mr-2");
-        return (await productNameElements.length) > 0;
-      },
-      {
-        timeout: 10000,
-        timeoutMsg: "Not found span.name in 10s",
-      }
-    );
-    const productNames = await $$("span.name.mr-2").map(
+    await $("span.name.mr-2").waitForDisplayed();
+    const productNames = await this.listNameProduct.map(
       async (el) => await el.getText()
     );
     const productFound = productNames.some((name) =>
@@ -108,7 +102,8 @@ class CartPage extends Page {
   }
   public async addOutOfStockProductToCart() {
     const addToCartButton = this.btnCartOutOfStock;
-    await addToCartButton.waitForClickable();
+    await addToCartButton.scrollIntoView();
+    await addToCartButton.waitForClickable({timeout:10000});
     await addToCartButton.click();
   }
 
