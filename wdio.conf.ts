@@ -24,6 +24,7 @@ export const config: WebdriverIO.Config = {
   // of the config file unless it's absolute.
   //
   specs: ["./test/specs/**/*.ts"],
+
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -44,7 +45,7 @@ export const config: WebdriverIO.Config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 5,
+  maxInstances: 10,
 
   //
   // If you have trouble getting all important capabilities together, check out the
@@ -135,12 +136,7 @@ export const config: WebdriverIO.Config = {
   region: "eu",
   services: [
     ["visual", { drivers: { browser: "130.0.6723.58" } }],
-    [
-      "sauce",
-      {
-        sauceConnect: true,
-      },
-    ],
+    ["sauce", { sauceConnect: true }],
   ],
 
   // Framework you want to run your specs with.
