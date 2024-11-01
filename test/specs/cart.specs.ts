@@ -4,11 +4,11 @@ describe("Add to Cart Functionality",  () => {
   beforeEach("open the website before adding products to cart", async () => {
     addToCartPage.open();
   });
-  it("verify add product to cart successfully from category", async () => {
+  it("Verify successful addition of the product to the cart from catalog", async () => {
     await addToCartPage.addToCartInCategory();
     await addToCartPage.checkAddToCartSuccess(productData.listTitleProduct.DuongThotNot);
   });
-  it("verify increase product quantity in cart", async () => {
+  it("Verify successful increase of product quantity in the shopping cart", async () => {
     await addToCartPage.addToCartTwice();
     await addToCartPage.checkQuantityProduct(2);
   });
@@ -17,18 +17,18 @@ describe("Add to Cart Functionality",  () => {
     await addToCartPage.CheckAddToCartFail();
   });
 
-  it("verify add product to cart successfully from homepage", async () => {
+  it("Verify successful addition of the product to the cart from homePage", async () => {
     await addToCartPage.addToCardInHomePage();
     await addToCartPage.checkAddToCartSuccess(productData.listTitleProduct.ComBoGoiXa);
   });
 
-  it("verify add to card without login", async () => {
+  it("Verify add to card without login", async () => {
     await addToCartPage.checkAccountNotLoggedIn();
     await addToCartPage.addToCardInHomePage();
     await addToCartPage.checkAddToCartSuccess(productData.listTitleProduct.ComBoGoiXa);
   });
 
-  it("verify do not have product in cart", async () => {
+  it("Verify that the cart is empty of products", async () => {
     await addToCartPage.checkCardWhenHaveNotProduct();
   });
 

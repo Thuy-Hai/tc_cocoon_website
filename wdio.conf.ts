@@ -60,7 +60,6 @@ export const config: WebdriverIO.Config = {
     // },
     {
       browserName: "chrome",
-      acceptInsecureCerts: true,
       platformName: "Windows 11",
       browserVersion: "latest",
       "sauce:options": {
@@ -342,8 +341,6 @@ export const config: WebdriverIO.Config = {
    * @param {<Object>} results object containing test results
    */
   onComplete: function () {
-    //  const reportError = new Error("Could not generate Allure report");
-    //console.log(reportError.message);
     const generation = allure(["generate", "allure-results", "--clean"]);
 
     return new Promise<void>((resolve, reject) => {
