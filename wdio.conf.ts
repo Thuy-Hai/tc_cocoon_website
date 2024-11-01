@@ -54,8 +54,13 @@ export const config: WebdriverIO.Config = {
   //
 
   capabilities: [
+    // {
+    //   browserName: "chrome",
+    //   acceptInsecureCerts: true,
+    // },
     {
       browserName: "chrome",
+      acceptInsecureCerts: true,
       platformName: "Windows 11",
       browserVersion: "latest",
       "sauce:options": {
@@ -68,22 +73,24 @@ export const config: WebdriverIO.Config = {
           "--headless",
           "--disable-gpu",
           "--no-sandbox",
+          "--disable-dev-shm-usage",
         ],
       },
     },
-    {
-      browserName: "firefox",
-      platformName: "Windows 11",
-      browserVersion: "latest",
-      "sauce:options": {
-        name: "My Test on Firefox",
-        build: "Build 1",
-        screenResolution: "1600x1200",
-      },
-      "moz:firefoxOptions": {
-        args: ["-headless"], 
-      },
-    },
+    // {
+    //   browserName: "firefox",
+    //   platformName: "Windows 11",
+    //   browserVersion: "latest",
+    //   "sauce:options": {
+    //     name: "My Test on firefox",
+    //     build: "Build 1",
+    //     screenResolution: "1600x1200",
+    //   },
+    //   "moz:firefoxOptions": {
+    //     args: ["-headless"],
+    //   },
+    //   acceptInsecureCerts: true,
+    // },
   ],
 
   //
@@ -135,9 +142,13 @@ export const config: WebdriverIO.Config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
 
+  // user: "oauth-ttthai.20it2-a77d4",
+  // key: "0e24529f-cdbe-44fc-bc1d-bc1e1088af06",
+
   user: process.env.SAUCE_USERNAME,
   key: process.env.SAUCE_ACCESS_KEY,
   region: "eu",
+
   services: [
     ["visual", { drivers: { browser: "130.0.6723.58" } }],
     ["sauce", { sauceConnect: true }],
