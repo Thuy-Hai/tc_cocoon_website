@@ -54,20 +54,12 @@ export const config: WebdriverIO.Config = {
   //
 
   capabilities: [
-    // {
-    //   // capabilities for local browser web tests
-    //   browserName: "chrome", // or "firefox", "microsoftedge", "safari"
-    //   // acceptInsecureCerts: true,
-    //   // 'goog:chromeOptions': {
-    //   //   args:['--headless','--disable-gpu','--no-sandbox','--disable-dev-shm-usage']
-    //   // }
-    // },
     {
       browserName: "chrome",
       platformName: "Windows 11",
       browserVersion: "latest",
       "sauce:options": {
-        name: "My Test",
+        name: "My Test on Chrome",
         build: "Build 1",
         screenResolution: "1600x1200",
       },
@@ -76,8 +68,20 @@ export const config: WebdriverIO.Config = {
           "--headless",
           "--disable-gpu",
           "--no-sandbox",
-          "--disable-dev-shm-usage",
         ],
+      },
+    },
+    {
+      browserName: "firefox",
+      platformName: "Windows 11",
+      browserVersion: "latest",
+      "sauce:options": {
+        name: "My Test on Firefox",
+        build: "Build 1",
+        screenResolution: "1600x1200",
+      },
+      "moz:firefoxOptions": {
+        args: ["-headless"], 
       },
     },
   ],
