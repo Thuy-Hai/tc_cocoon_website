@@ -58,7 +58,6 @@ export const config: WebdriverIO.Config = {
    
     {
       browserName: "chrome",
-      acceptInsecureCerts: true,
     },
    
   ],
@@ -117,6 +116,7 @@ export const config: WebdriverIO.Config = {
     [
       "visual",
       {
+        drivers: { browser: "130.0.6723.58" },
         baselineFolder: path.join(process.cwd(), "tests", "baseline"),
         formatImageName: "{tag}-{logName}-{width}x{height}",
         screenshotPath: path.join(process.cwd(), "tmp"),
