@@ -1,89 +1,13 @@
 [
   {
-    "description": "Login function",
+    "description": "homePage Visualize",
     "data": [
       {
-        "test": "verify home page display",
+        "test": "verify element in home page display",
         "data": [
           {
-            "description": "Login function",
-            "test": "verify home page display",
-            "tag": "cart",
-            "instanceData": {
-              "browser": {
-                "name": "chrome",
-                "version": "130.0.6723.92"
-              },
-              "platform": {
-                "name": "windows",
-                "version": "not-known"
-              }
-            },
-            "commandName": "checkElement",
-            "framework": "mocha",
-            "boundingBoxes": {
-              "diffBoundingBoxes": [],
-              "ignoredBoxes": []
-            },
-            "fileData": {
-              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\cart--1555x883.png",
-              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\cart--1555x883.png",
-              "fileName": "cart--1555x883.png",
-              "size": {
-                "actual": {
-                  "height": 16,
-                  "width": 51
-                },
-                "baseline": {
-                  "height": 16,
-                  "width": 51
-                }
-              }
-            },
-            "misMatchPercentage": "0.00",
-            "rawMisMatchPercentage": 0
-          },
-          {
-            "description": "Login function",
-            "test": "verify home page display",
-            "tag": "login",
-            "instanceData": {
-              "browser": {
-                "name": "chrome",
-                "version": "130.0.6723.92"
-              },
-              "platform": {
-                "name": "windows",
-                "version": "not-known"
-              }
-            },
-            "commandName": "checkElement",
-            "framework": "mocha",
-            "boundingBoxes": {
-              "diffBoundingBoxes": [],
-              "ignoredBoxes": []
-            },
-            "fileData": {
-              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\login--1555x883.png",
-              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\login--1555x883.png",
-              "fileName": "login--1555x883.png",
-              "size": {
-                "actual": {
-                  "height": 16,
-                  "width": 63
-                },
-                "baseline": {
-                  "height": 16,
-                  "width": 63
-                }
-              }
-            },
-            "misMatchPercentage": "0.00",
-            "rawMisMatchPercentage": 0
-          },
-          {
-            "description": "Login function",
-            "test": "verify home page display",
+            "description": "homePage Visualize",
+            "test": "verify element in home page display",
             "tag": "navbar",
             "instanceData": {
               "browser": {
@@ -120,9 +44,9 @@
             "rawMisMatchPercentage": 0
           },
           {
-            "description": "Login function",
-            "test": "verify home page display",
-            "tag": "product",
+            "description": "homePage Visualize",
+            "test": "verify element in home page display",
+            "tag": "fullPage",
             "instanceData": {
               "browser": {
                 "name": "chrome",
@@ -133,24 +57,24 @@
                 "version": "not-known"
               }
             },
-            "commandName": "checkElement",
+            "commandName": "checkFullPageScreen",
             "framework": "mocha",
             "boundingBoxes": {
               "diffBoundingBoxes": [],
               "ignoredBoxes": []
             },
             "fileData": {
-              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\product--1555x883.png",
-              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\product--1555x883.png",
-              "fileName": "product--1555x883.png",
+              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\fullPage--1051x798.png",
+              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\fullPage--1051x798.png",
+              "fileName": "fullPage--1051x798.png",
               "size": {
                 "actual": {
-                  "height": 16,
-                  "width": 58
+                  "height": 10034,
+                  "width": 1036
                 },
                 "baseline": {
-                  "height": 16,
-                  "width": 58
+                  "height": 10034,
+                  "width": 1036
                 }
               }
             },
@@ -158,8 +82,58 @@
             "rawMisMatchPercentage": 0
           },
           {
-            "description": "Login function",
-            "test": "verify home page display",
+            "description": "homePage Visualize",
+            "test": "verify element in home page display",
+            "tag": "partialPage",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.92"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkScreen",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [
+                {
+                  "left": 0,
+                  "top": 0,
+                  "right": 1294,
+                  "bottom": 2
+                }
+              ],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\partialPage--1051x798.png",
+              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\partialPage--1051x798.png",
+              "diffFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\diff\\desktop_chrome\\partialPage--1051x798.png",
+              "fileName": "partialPage--1051x798.png",
+              "size": {
+                "actual": {
+                  "height": 651,
+                  "width": 1036
+                },
+                "baseline": {
+                  "height": 651,
+                  "width": 1036
+                },
+                "diff": {
+                  "height": 651,
+                  "width": 1036
+                }
+              }
+            },
+            "misMatchPercentage": "0.37",
+            "rawMisMatchPercentage": 0.36855036855036855
+          },
+          {
+            "description": "homePage Visualize",
+            "test": "verify element in home page display",
             "tag": "partialPage",
             "instanceData": {
               "browser": {
@@ -178,17 +152,17 @@
               "ignoredBoxes": []
             },
             "fileData": {
-              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\partialPage--1051x798.png",
-              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\partialPage--1051x798.png",
-              "fileName": "partialPage--1051x798.png",
+              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\partialPage--1555x883.png",
+              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\partialPage--1555x883.png",
+              "fileName": "partialPage--1555x883.png",
               "size": {
                 "actual": {
-                  "height": 651,
-                  "width": 1036
+                  "height": 736,
+                  "width": 1540
                 },
                 "baseline": {
-                  "height": 651,
-                  "width": 1036
+                  "height": 736,
+                  "width": 1540
                 }
               }
             },

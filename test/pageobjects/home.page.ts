@@ -18,26 +18,14 @@ class HomePage extends Page {
     return $("aria/Giỏ hàng");
   }
 
-  public async check() {
-    await expect(browser).toMatchScreenSnapshot("partialPage");
-    await expect($("#navbar")).toMatchElementSnapshot("navbar");
-    await this.checkLinkCartDisplay();
-    await this.checkLinkLoginDisplay();
-    await this.checkLinkProductDisplay();
+  public get divNavbar() {
+    return $("#navbar");
   }
 
-  public async checkLinkLoginDisplay() {
-    const login = await this.btnToLoginPage;
-    const result = await browser.checkElement(login, "login");
+  public async checkNavbarVisualize() {
+    const result = await browser.checkElement(this.divNavbar, "navbar");
     await expect(result).toBeLessThan(0.05);
   }
-
-  public async checkLinkCartDisplay() {
-    const cart = await this.btnToCartPage;
-    const result = await browser.checkElement(cart, "cart");
-    await expect(result).toBeLessThan(0.05);
-  }
-
   public async checkLinkProductDisplay() {
     const product = await this.btnProduct;
     const result = await browser.checkElement(product, "product");

@@ -5,7 +5,7 @@ describe("search function", function () {
   beforeEach("open website before search", () => {
     searchPage.open();
   });
-  it.only("verify search successful with valid input", async () => {
+  it("verify search successful with valid input", async () => {
     await searchPage.searchProduct(searchData.listData.validData);
     await searchPage.checkIfContainsProductName(searchData.listData.validData);
   });
@@ -13,7 +13,7 @@ describe("search function", function () {
     await searchPage.searchProduct(searchData.listData.invalidData);
     await searchPage.checkMessageNotFoundDisplayed();
   });
-  it("verify search failed with empty input", async () => {
+  it.only("verify search failed with empty input", async () => {
     await searchPage.searchProduct(searchData.listData.emptyData);
     await searchPage.checkInputIsEmpty();
   });

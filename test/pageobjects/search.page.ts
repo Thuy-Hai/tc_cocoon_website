@@ -35,10 +35,9 @@ class SearchPage extends Page {
     expect(isMessegeNotFoundDisplay).to.be.true;
   }
   public async checkInputIsEmpty() {
-    const isProductListDisplayed = await this.productList.isDisplayed();
-    expect(isProductListDisplayed).to.be.true;
-    const isMessegeNotFoundDisplay =
-      await this.messageNotFoundProduct.isDisplayed();
+    const inputValue = await this.inputSearch.getValue();
+    expect(inputValue).to.equal("");
+    const isMessegeNotFoundDisplay = await this.messageNotFoundProduct.isDisplayed();
     expect(isMessegeNotFoundDisplay).to.be.false;
   }
   public async searchBySuggestion() {

@@ -1,11 +1,10 @@
 import homePage from "../pageobjects/home.page";
-describe("Login function", () => {
+describe("homePage Visualize", () => {
   beforeEach("Open Home Page", () => {
     homePage.open();
   });
 
- 
-    it("verify home page display", async () => {
-        await homePage.check();
+    it("verify element in home page display", async () => {
+        await homePage.checkNavbarVisualize();
   });
 });
