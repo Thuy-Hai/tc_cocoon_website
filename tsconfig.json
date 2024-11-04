@@ -26,7 +26,8 @@
     },
     "include": [
         "test",
-        "wdio.conf.ts", 
+        "wdio.conf.ts",
+        "wdio.conf.visual.ts", 
         "allure-commandline.d.ts"
     ]
 }

@@ -55,37 +55,12 @@ export const config: WebdriverIO.Config = {
   //
 
   capabilities: [
+   
     {
       browserName: "chrome",
-      platformName: "Windows 11",
-      browserVersion: "latest",
-      "sauce:options": {
-        name: "My Test on Chrome",
-        build: "Build 1",
-        screenResolution: "1600x1200",
-      },
-      "goog:chromeOptions": {
-        args: ["--headless", "--disable-gpu"],
-      },
+      acceptInsecureCerts: true,
     },
-    // {
-    //   browserName: "chrome",
-    //   acceptInsecureCerts: true,
-    // },
-    // {
-    //   browserName: "firefox",
-    //   platformName: "Windows 11",
-    //   browserVersion: "latest",
-    //   "sauce:options": {
-    //     name: "My Test on firefox",
-    //     build: "Build 1",
-    //     screenResolution: "1600x1200",
-    //   },
-    //   "moz:firefoxOptions": {
-    //     args: ["-headless"],
-    //   },
-    //   acceptInsecureCerts: true,
-    // },
+   
   ],
 
   //
@@ -137,16 +112,19 @@ export const config: WebdriverIO.Config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
 
-  user: process.env.SAUCE_USERNAME,
-  key: process.env.SAUCE_ACCESS_KEY,
-  region: "eu",
-
+ 
   services: [
-    ["visual", { drivers: { browser: "130.0.6723.58" } },
-
+    [
+      "visual",
+      {
+        baselineFolder: path.join(process.cwd(), "tests", "baseline"),
+        formatImageName: "{tag}-{logName}-{width}x{height}",
+        screenshotPath: path.join(process.cwd(), "tmp"),
+        savePerInstance: true,
+        autoSaveBaseline: true,
+        createJsonReportFiles: true,
+      },
     ],
-  
-    ["sauce", { sauceConnect: true }],
   ],
 
   // Framework you want to run your specs with.
@@ -336,6 +314,7 @@ export const config: WebdriverIO.Config = {
    * @param {<Object>} results object containing test results
    */
   onComplete: function () {
+    const reportError = new Error('Could not generate Allure report')
     const generation = allure(["generate", "allure-results", "--clean"]);
 
     return new Promise<void>((resolve, reject) => {

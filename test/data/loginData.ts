@@ -3,7 +3,6 @@ class LoginData {
         phone: "0917697809",
         password:"Hop1010ly@",
     }
-
     wrongPhoneAndCorrectPassword = {
         phone: "0958734753",
         password:"Hop1010ly@",
@@ -24,7 +23,6 @@ class LoginData {
         phone: "123",
         password: "abc",
     }
-
 }
 
 export default new LoginData;

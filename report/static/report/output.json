@@ -1,0 +1,212 @@
+[
+  {
+    "description": "Login function",
+    "data": [
+      {
+        "test": "verify home page display",
+        "data": [
+          {
+            "description": "Login function",
+            "test": "verify home page display",
+            "tag": "cart",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.92"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkElement",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "static\\report\\actual\\desktop_chrome\\cart--1555x883.png",
+              "baselineFilePath": "static\\report\\baseline\\desktop_chrome\\cart--1555x883.png",
+              "fileName": "cart--1555x883.png",
+              "size": {
+                "actual": {
+                  "height": 16,
+                  "width": 51
+                },
+                "baseline": {
+                  "height": 16,
+                  "width": 51
+                }
+              },
+              "original_actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\cart--1555x883.png",
+              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\cart--1555x883.png"
+            },
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
+          },
+          {
+            "description": "Login function",
+            "test": "verify home page display",
+            "tag": "login",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.92"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkElement",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "static\\report\\actual\\desktop_chrome\\login--1555x883.png",
+              "baselineFilePath": "static\\report\\baseline\\desktop_chrome\\login--1555x883.png",
+              "fileName": "login--1555x883.png",
+              "size": {
+                "actual": {
+                  "height": 16,
+                  "width": 63
+                },
+                "baseline": {
+                  "height": 16,
+                  "width": 63
+                }
+              },
+              "original_actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\login--1555x883.png",
+              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\login--1555x883.png"
+            },
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
+          },
+          {
+            "description": "Login function",
+            "test": "verify home page display",
+            "tag": "navbar",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.92"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkElement",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "static\\report\\actual\\desktop_chrome\\navbar--1555x883.png",
+              "baselineFilePath": "static\\report\\baseline\\desktop_chrome\\navbar--1555x883.png",
+              "fileName": "navbar--1555x883.png",
+              "size": {
+                "actual": {
+                  "height": 105,
+                  "width": 1232
+                },
+                "baseline": {
+                  "height": 105,
+                  "width": 1232
+                }
+              },
+              "original_actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\navbar--1555x883.png",
+              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\navbar--1555x883.png"
+            },
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
+          },
+          {
+            "description": "Login function",
+            "test": "verify home page display",
+            "tag": "product",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.92"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkElement",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "static\\report\\actual\\desktop_chrome\\product--1555x883.png",
+              "baselineFilePath": "static\\report\\baseline\\desktop_chrome\\product--1555x883.png",
+              "fileName": "product--1555x883.png",
+              "size": {
+                "actual": {
+                  "height": 16,
+                  "width": 58
+                },
+                "baseline": {
+                  "height": 16,
+                  "width": 58
+                }
+              },
+              "original_actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\product--1555x883.png",
+              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\product--1555x883.png"
+            },
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
+          },
+          {
+            "description": "Login function",
+            "test": "verify home page display",
+            "tag": "partialPage",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.92"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkScreen",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "static\\report\\actual\\desktop_chrome\\partialPage--1051x798.png",
+              "baselineFilePath": "static\\report\\baseline\\desktop_chrome\\partialPage--1051x798.png",
+              "fileName": "partialPage--1051x798.png",
+              "size": {
+                "actual": {
+                  "height": 651,
+                  "width": 1036
+                },
+                "baseline": {
+                  "height": 651,
+                  "width": 1036
+                }
+              },
+              "original_actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\partialPage--1051x798.png",
+              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\partialPage--1051x798.png"
+            },
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
+          }
+        ]
+      }
+    ]
+  }
+]

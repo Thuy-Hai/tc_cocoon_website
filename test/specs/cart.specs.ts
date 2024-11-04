@@ -1,6 +1,7 @@
-import addToCartPage from "../pageobjects/funtional/cart.page";
+import addToCartPage from "../pageobjects/cart.page";
 import productData from "../data/productData";
-describe("Add to Cart Functionality",  () => {
+
+describe("Add to Cart Functionality", () => {
   beforeEach("open the website before adding products to cart", async () => {
     addToCartPage.open();
   });
@@ -16,33 +17,27 @@ describe("Add to Cart Functionality",  () => {
     await addToCartPage.addOutOfStockProductToCart();
     await addToCartPage.CheckAddToCartFail();
   });
-
   it("Verify successful addition of the product to the cart from homePage", async () => {
     await addToCartPage.addToCardInHomePage();
     await addToCartPage.checkAddToCartSuccess(productData.listTitleProduct.ComBoGoiXa);
   });
-
   it("Verify add to card without login", async () => {
     await addToCartPage.checkAccountNotLoggedIn();
     await addToCartPage.addToCardInHomePage();
     await addToCartPage.checkAddToCartSuccess(productData.listTitleProduct.ComBoGoiXa);
   });
-
   it("Verify that the cart is empty of products", async () => {
     await addToCartPage.checkCardWhenHaveNotProduct();
   });
-
   it("verify remove product in cart successful", async () => {
     await addToCartPage.removeProductInCart();
     await addToCartPage.checkProductRemoveInCart();
   });
-
   it("Verify after login, product is still in cart", async () => {
     await addToCartPage.ProductIsStillInCart();
     await addToCartPage.checkProductIsStillInCart();
-
   });
-  afterEach("Clear Session Data",  () => {
+  afterEach("Clear Session Data", () => {
     addToCartPage.clearData();
   });
 });

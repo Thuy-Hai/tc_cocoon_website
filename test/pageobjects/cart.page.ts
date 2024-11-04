@@ -1,16 +1,11 @@
-import Page from "../page";
+import Page from "./page";
 import { expect } from "chai";
-import productData from "../../data/productData";
-import loginPage from "../authentication/login.page";
-import loginData from "../../data/loginData";
-
+import productData from "../data/productData";
+import loginPage from "./login.page";
+import loginData from "../data/loginData";
+import homePage from "./home.page";
 class CartPage extends Page {
-  public get btnToLoginPage() {
-    return $("button=Đăng nhập");
-  }
-  public get btnProduct() {
-    return $("button=Sản phẩm");
-  }
+
   public get lnkToAllProduct() {
     return $("#tam-va-duong-the a");
   }
@@ -34,57 +29,37 @@ class CartPage extends Page {
   public get messageOutOfStock() {
     return $("aria/Sản phẩm đã hết hàng");
   }
-
   public get txtNumberOfProductsInCart() {
     return $("button.nav-link span");
   }
-
   public get btnCloseCart() {
     return $(".shopping-cart__topbar__close");
   }
-
-  public get lnkAccountInfo() {
-    return $("div=Tài khoản");
-  }
-
   public get btnRemoveProduct() {
     return $(".cart__icon-close");
   }
-
   public get btnContinueBuy() {
     return $("aria/TIẾP TỤC MUA SẮM");
   }
-
   public get txtTitle() {
     return $("div.title");
   }
 
-  public get btnToCartPage() {
-    return $("aria/Giỏ hàng");
-  }
   public get listNameProduct() {
-    return  $$("span.name.mr-2");
+    return $$("span.name.mr-2");
   }
-
   public async addToCartInCategory() {
-    await this.btnProduct.click();
+    await homePage.btnProduct.click();
     await this.lnkToAllProduct.click();
     await this.lnkSpecificProduct.click();
     await this.btnAddToCard.click();
   }
-
   public async checkAddToCartSuccess(expectedProductName: string) {
     await $("span.name.mr-2").waitForDisplayed();
-    const productNames = await this.listNameProduct.map(
-      async (el) => await el.getText()
-    );
-    const productFound = productNames.some((name) =>
-      name.includes(expectedProductName)
-    );
-    console.log("Available products in cart:", productNames);
+    const productNames = await this.listNameProduct.map(async (el) => await el.getText());
+    const productFound = productNames.some((name) =>name.includes(expectedProductName));
     expect(productFound).to.be.true;
   }
-
   public async addToCartTwice() {
     await this.addToCartInCategory();
     await this.checkAddToCartSuccess(productData.listTitleProduct.DuongThotNot);
@@ -93,44 +68,35 @@ class CartPage extends Page {
     await browser.pause(5000);
     await this.checkAddToCartSuccess(productData.listTitleProduct.DuongThotNot);
   }
-
   public async checkQuantityProduct(expectValue: number) {
     const qualityText = await this.txtQuatityProduct.getText();
     const quality = parseInt(qualityText.trim(), 10);
-    console.log(`Current quantity in cart: ${quality}`);
     expect(quality).to.equal(expectValue);
   }
   public async addOutOfStockProductToCart() {
     const addToCartButton = this.btnCartOutOfStock;
     await addToCartButton.scrollIntoView();
-    await addToCartButton.waitForClickable({timeout:10000});
+    await addToCartButton.waitForClickable({ timeout: 10000 });
     await addToCartButton.click();
   }
-
   public async CheckAddToCartFail() {
     const message = this.messageOutOfStock;
     await message.waitForDisplayed();
     expect(await message.isDisplayed()).to.be.true;
-    console.log("log:");
   }
-
   public async addToCardInHomePage() {
     const addToCardBtn = this.btnCartInstock;
     await addToCardBtn.waitForClickable();
     await addToCardBtn.click();
   }
-
   public async closeCart() {
     await this.btnCloseCart.waitForClickable({ timeout: 5000 });
     await this.btnCloseCart.click();
-    console.log("close cart");
   }
-
   public async checkCountInCard(count: number) {
     await this.txtNumberOfProductsInCart.waitForDisplayed();
     const cartCountText = await this.txtNumberOfProductsInCart.getText();
     const cartCount = parseInt(cartCountText.replace(/[()]/g, ""), 10);
-    console.log("cart count: ", cartCount);
     expect(cartCount).to.equal(count);
   }
   public async removeProductInCart() {
@@ -145,16 +111,13 @@ class CartPage extends Page {
     expect(isDisplayed).to.be.true;
   }
   public async checkCardWhenHaveNotProduct() {
-    await this.btnToCartPage.waitForDisplayed();
-    await this.btnToCartPage.click();
+    await homePage.btnToCartPage.waitForDisplayed();
+    await homePage.btnToCartPage.click();
     await this.checkProductRemoveInCart();
   }
-
-  
   public async checkAccountNotLoggedIn() {
-    const isDisplayed = await this.btnToLoginPage.isDisplayed();
+    const isDisplayed = await homePage.btnToLoginPage.isDisplayed();
     expect(isDisplayed).to.be.true;
-    console.log("account not loggin");
   }
   public async ProductIsStillInCart() {
     await this.checkAccountNotLoggedIn();
@@ -165,11 +128,9 @@ class CartPage extends Page {
   }
   public async checkProductIsStillInCart() {
     await loginPage.login(loginData.correctPhoneAndPassword);
-    await loginPage.checkLoginSuccessful();
+    await loginPage.checkLoginSuccess();
     await this.checkCountInCard(1);
   }
-
-
   public open() {
     return super.openAndWait();
   }
