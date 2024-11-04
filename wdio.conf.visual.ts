@@ -55,11 +55,12 @@ export const config: WebdriverIO.Config = {
   //
 
   capabilities: [
-   
     {
       browserName: "chrome",
+      "goog:chromeOptions": {
+        args: ["--headless", "--disable-gpu"],
+      },
     },
-   
   ],
 
   //
@@ -111,7 +112,6 @@ export const config: WebdriverIO.Config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
 
- 
   services: [
     [
       "visual",
@@ -314,7 +314,7 @@ export const config: WebdriverIO.Config = {
    * @param {<Object>} results object containing test results
    */
   onComplete: function () {
-    const reportError = new Error('Could not generate Allure report')
+    const reportError = new Error("Could not generate Allure report");
     const generation = allure(["generate", "allure-results", "--clean"]);
 
     return new Promise<void>((resolve, reject) => {
