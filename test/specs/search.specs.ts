@@ -13,7 +13,7 @@ describe("search function", function () {
     await searchPage.searchProduct(searchData.listData.invalidData);
     await searchPage.checkMessageNotFoundDisplayed();
   });
-  it.only("verify search failed with empty input", async () => {
+  it("verify search failed with empty input", async () => {
     await searchPage.searchProduct(searchData.listData.emptyData);
     await searchPage.checkInputIsEmpty();
   });

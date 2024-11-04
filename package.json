@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio run ./wdio.conf.ts  --spec ./test/specs/search.specs.ts ",
-    "wdio": "wdio run ./wdio.conf.ts",
+    "test": "wdio run ./wdio.conf.ts  --spec ./test/specs/search.specs.ts",
+    "wdio": "wdio run ./wdio.conf.ts --spec ./test/specs/search.specs.ts",
     "visual": "wdio run ./wdio.conf.visual.ts --spec ./test/specs/home.specs.ts",
     "report": "allure generate allure-results && allure open"
   },
