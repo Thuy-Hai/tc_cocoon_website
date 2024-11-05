@@ -18,8 +18,13 @@ jobs:
       #     SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
       #     SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
       #   run: npm run wdio
-      - name: run visual testing
-        run: npm run visual
+      - name: Run WebdriverIO tests on Lambda
+        env:
+          LT_USERNAME: ${{ secrets.LT_USERNAME }}
+          LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+        run: npm run lambda
+      # - name: run visual testing
+      #   run: npm run visual
       - uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:

@@ -18,6 +18,11 @@ class SearchPage extends Page {
   public get txtSuggestion() {
     return $("aria/Nước tẩy trang");
   }
+  public get txtTitleSearch() {
+    return $("aria/Nhập từ khóa bạn muốn tìm kiếm");
+  }
+
+ 
   public async searchProduct(input: string) {
     await this.iconSearch.waitForClickable({ timeout: 10000 });
     await this.iconSearch.click();
@@ -37,7 +42,8 @@ class SearchPage extends Page {
   public async checkInputIsEmpty() {
     const inputValue = await this.inputSearch.getValue();
     expect(inputValue).to.equal("");
-    const isMessegeNotFoundDisplay = await this.messageNotFoundProduct.isDisplayed();
+    const isMessegeNotFoundDisplay =
+      await this.messageNotFoundProduct.isDisplayed();
     expect(isMessegeNotFoundDisplay).to.be.false;
   }
   public async searchBySuggestion() {

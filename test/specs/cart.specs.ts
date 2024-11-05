@@ -1,43 +1,43 @@
-import addToCartPage from "../pageobjects/cart.page";
+import cart from "../pageobjects/cart.page";
 import productData from "../data/productData";
 
-describe("Add to Cart Functionality", () => {
-  beforeEach("open the website before adding products to cart", async () => {
-    addToCartPage.open();
+describe("Add to Cart Function", () => {
+  beforeEach("open homepage", async () => {
+    cart.open();
   });
   it("Verify successful addition of the product to the cart from catalog", async () => {
-    await addToCartPage.addToCartInCategory();
-    await addToCartPage.checkAddToCartSuccess(productData.listTitleProduct.DuongThotNot);
+    await cart.addToCartFromCatalog();
+    await cart.checkAddToCartSuccessfully(productData.listTitleProduct.DuongThotNot);
   });
   it("Verify successful increase of product quantity in the shopping cart", async () => {
-    await addToCartPage.addToCartTwice();
-    await addToCartPage.checkQuantityProduct(2);
+    await cart.addToCartTwice();
+    await cart.checkQuantityProduct(2);
   });
   it("Verify out of stock product cannot be added to cart", async () => {
-    await addToCartPage.addOutOfStockProductToCart();
-    await addToCartPage.CheckAddToCartFail();
+    await cart.addOutOfStockProductToCart();
+    await cart.CheckAddToCartFailed();
   });
   it("Verify successful addition of the product to the cart from homePage", async () => {
-    await addToCartPage.addToCardInHomePage();
-    await addToCartPage.checkAddToCartSuccess(productData.listTitleProduct.ComBoGoiXa);
+    await cart.addToCardFromHomePage();
+    await cart.checkAddToCartSuccessfully(productData.listTitleProduct.ComBoGoiXa);
   });
   it("Verify add to card without login", async () => {
-    await addToCartPage.checkAccountNotLoggedIn();
-    await addToCartPage.addToCardInHomePage();
-    await addToCartPage.checkAddToCartSuccess(productData.listTitleProduct.ComBoGoiXa);
+    await cart.addToCardWithoutLogin();
+    await cart.checkAddToCartSuccessfully(productData.listTitleProduct.ComBoGoiXa);
   });
   it("Verify that the cart is empty of products", async () => {
-    await addToCartPage.checkCardWhenHaveNotProduct();
+    await cart.cart();
+    await cart.checkCartIsEmpty();
   });
   it("verify remove product in cart successful", async () => {
-    await addToCartPage.removeProductInCart();
-    await addToCartPage.checkProductRemoveInCart();
+    await cart.removeProductInCart();
+    await cart.checkCartIsEmpty();
   });
   it("Verify after login, product is still in cart", async () => {
-    await addToCartPage.ProductIsStillInCart();
-    await addToCartPage.checkProductIsStillInCart();
+    await cart.productIsStillInCart();
+    await cart.checkProductIsStillInCart();
   });
   afterEach("Clear Session Data", () => {
-    addToCartPage.clearData();
+    cart.clearData();
   });
 });

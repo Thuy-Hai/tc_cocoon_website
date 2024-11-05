@@ -57,9 +57,9 @@ export const config: WebdriverIO.Config = {
   capabilities: [
     {
       browserName: "chrome",
-      "goog:chromeOptions": {
-        args: ["--headless", "--disable-gpu"],
-      },
+      // "goog:chromeOptions": {
+      //   args: ["--headless", "--disable-gpu"],
+      // },
     },
   ],
 
@@ -116,7 +116,7 @@ export const config: WebdriverIO.Config = {
     [
       "visual",
       {
-        drivers: { browser: "130.0.6723.58" },
+       // drivers: { browser: "130.0.6723.58" },
         baselineFolder: path.join(process.cwd(), "tests", "baseline"),
         formatImageName: "{tag}-{logName}-{width}x{height}",
         screenshotPath: path.join(process.cwd(), "tmp"),
@@ -125,6 +125,7 @@ export const config: WebdriverIO.Config = {
         createJsonReportFiles: true,
       },
     ],
+    
   ],
 
   // Framework you want to run your specs with.

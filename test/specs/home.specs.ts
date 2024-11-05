@@ -1,10 +1,13 @@
 import homePage from "../pageobjects/home.page";
-describe("homePage Visualize", () => {
-  beforeEach("Open Home Page", () => {
+describe("home page visualize", () => {
+  before("open brower", async () => {
     homePage.open();
   });
+  it("verify navbar display", async () => {
+    await homePage.checkNavbarDisplay();
+  });
 
-    it("verify element in home page display", async () => {
-        await homePage.checkNavbarVisualize();
+  it("verify banner display", async () => {
+    await homePage.checkOverviewBannerDisplay();
   });
 });

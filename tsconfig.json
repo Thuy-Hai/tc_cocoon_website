@@ -28,6 +28,9 @@
         "test",
         "wdio.conf.ts",
         "wdio.conf.visual.ts", 
+        "wdio.conf.seleniumgrid.ts",
+        "wdio.conf.lamda.ts",
         "allure-commandline.d.ts"
+
     ]
 }

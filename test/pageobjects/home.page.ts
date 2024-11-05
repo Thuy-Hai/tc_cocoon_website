@@ -18,19 +18,59 @@ class HomePage extends Page {
     return $("aria/Giỏ hàng");
   }
 
-  public get divNavbar() {
-    return $("#navbar");
+  public get promoBanner() {
+    return $(".absolute.flex.flex-col.w-full.lg\\:flex-row.lg\\:h-full");
   }
 
-  public async checkNavbarVisualize() {
-    const result = await browser.checkElement(this.divNavbar, "navbar");
+  public get imageInBanner() {
+    return $(".image-block");
+  }
+
+  public get navbar() {
+    return $("#navbar");
+  }
+  public async checkNavbarDisplay() {
+    const navbar = this.navbar;
+    await expect(navbar).toMatchElementSnapshot("navbar");
+    await this.checkBtnToLoginPageDisplay();
+    await this.checkBtnProductDisplay();
+    await this.checkBtnToCartPageDisplay();
+  }
+
+  public async checkBtnToLoginPageDisplay() {
+    const btnToLoginPage = await this.btnToLoginPage;
+    const result = await browser.checkElement(btnToLoginPage, "btnToLoginPage");
     await expect(result).toBeLessThan(0.05);
   }
-  public async checkLinkProductDisplay() {
-    const product = await this.btnProduct;
-    const result = await browser.checkElement(product, "product");
+
+  public async checkBtnProductDisplay() {
+    const btnProduct = await this.btnProduct;
+    const result = await browser.checkElement(btnProduct, "btnProduct");
     await expect(result).toBeLessThan(0.05);
   }
+
+  public async checkBtnToCartPageDisplay() {
+    const btnToCartPage = await this.btnToCartPage;
+    const result = await browser.checkElement(btnToCartPage, "btnToCartPage");
+    await expect(result).toBeLessThan(0.05);
+  }
+
+  public async checkOverviewBannerDisplay() {
+    await this.checkPromoBannerDisplay();
+    await this.checkImageInBannerDisplay();
+  }
+  public async checkPromoBannerDisplay() {
+    const promoBanner = await this.promoBanner;
+    const result = await browser.checkElement(promoBanner, "promoBanner");
+    await expect(result).toBeLessThan(0.05);
+  }
+
+  public async checkImageInBannerDisplay() {
+    const imageInBanner = await this.imageInBanner;
+    const result = await browser.checkElement(imageInBanner, "imageInBanner");
+    await expect(result).toBeLessThan(0.05);
+  }
+
   public open() {
     return super.openAndWait();
   }

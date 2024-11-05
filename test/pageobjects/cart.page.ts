@@ -5,7 +5,6 @@ import loginPage from "./login.page";
 import loginData from "../data/loginData";
 import homePage from "./home.page";
 class CartPage extends Page {
-
   public get lnkToAllProduct() {
     return $("#tam-va-duong-the a");
   }
@@ -48,25 +47,25 @@ class CartPage extends Page {
   public get listNameProduct() {
     return $$("span.name.mr-2");
   }
-  public async addToCartInCategory() {
+  public async addToCartFromCatalog() {
     await homePage.btnProduct.click();
     await this.lnkToAllProduct.click();
     await this.lnkSpecificProduct.click();
     await this.btnAddToCard.click();
   }
-  public async checkAddToCartSuccess(expectedProductName: string) {
+  public async checkAddToCartSuccessfully(expectedProductName: string) {
     await $("span.name.mr-2").waitForDisplayed();
     const productNames = await this.listNameProduct.map(async (el) => await el.getText());
     const productFound = productNames.some((name) =>name.includes(expectedProductName));
     expect(productFound).to.be.true;
   }
   public async addToCartTwice() {
-    await this.addToCartInCategory();
-    await this.checkAddToCartSuccess(productData.listTitleProduct.DuongThotNot);
+    await this.addToCartFromCatalog();
+    await this.checkAddToCartSuccessfully(productData.listTitleProduct.DuongThotNot);
     await this.closeCart();
     await this.btnAddToCard.click();
     await browser.pause(5000);
-    await this.checkAddToCartSuccess(productData.listTitleProduct.DuongThotNot);
+    await this.checkAddToCartSuccessfully(productData.listTitleProduct.DuongThotNot);
   }
   public async checkQuantityProduct(expectValue: number) {
     const qualityText = await this.txtQuatityProduct.getText();
@@ -79,12 +78,12 @@ class CartPage extends Page {
     await addToCartButton.waitForClickable({ timeout: 10000 });
     await addToCartButton.click();
   }
-  public async CheckAddToCartFail() {
-    const message = this.messageOutOfStock;
-    await message.waitForDisplayed();
-    expect(await message.isDisplayed()).to.be.true;
+  public async CheckAddToCartFailed() {
+    await this.messageOutOfStock.waitForDisplayed();
+    const result = await this.messageOutOfStock.isDisplayed();
+    expect(result).to.be.true;
   }
-  public async addToCardInHomePage() {
+  public async addToCardFromHomePage() {
     const addToCardBtn = this.btnCartInstock;
     await addToCardBtn.waitForClickable();
     await addToCardBtn.click();
@@ -100,35 +99,39 @@ class CartPage extends Page {
     expect(cartCount).to.equal(count);
   }
   public async removeProductInCart() {
-    await this.addToCardInHomePage();
-    await this.checkAddToCartSuccess(productData.listTitleProduct.ComBoGoiXa);
+    await this.addToCardFromHomePage();
+    await this.checkAddToCartSuccessfully(productData.listTitleProduct.ComBoGoiXa);
     await this.btnRemoveProduct.waitForClickable();
     await this.btnRemoveProduct.click();
   }
-  public async checkProductRemoveInCart() {
+  public async checkCartIsEmpty() {
     await this.txtTitle.waitForDisplayed({ timeout: 10000 });
     const isDisplayed = await this.txtTitle.isDisplayed();
     expect(isDisplayed).to.be.true;
   }
-  public async checkCardWhenHaveNotProduct() {
-    await homePage.btnToCartPage.waitForDisplayed();
+  public async cart() {
+    await homePage.btnToCartPage.waitForClickable();
     await homePage.btnToCartPage.click();
-    await this.checkProductRemoveInCart();
+    
+  }
+  public async addToCardWithoutLogin() {
+    await this.checkAccountNotLoggedIn();
+    await this.addToCardFromHomePage();
   }
   public async checkAccountNotLoggedIn() {
     const isDisplayed = await homePage.btnToLoginPage.isDisplayed();
     expect(isDisplayed).to.be.true;
   }
-  public async ProductIsStillInCart() {
+  public async productIsStillInCart() {
     await this.checkAccountNotLoggedIn();
-    await this.addToCardInHomePage();
-    await this.checkAddToCartSuccess(productData.listTitleProduct.ComBoGoiXa);
+    await this.addToCardFromHomePage();
+    await this.checkAddToCartSuccessfully(productData.listTitleProduct.ComBoGoiXa);
     await this.closeCart();
     await this.checkCountInCard(1);
   }
   public async checkProductIsStillInCart() {
     await loginPage.login(loginData.correctPhoneAndPassword);
-    await loginPage.checkLoginSuccess();
+    await loginPage.checkLoginSuccessfully();
     await this.checkCountInCard(1);
   }
   public open() {

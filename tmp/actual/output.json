@@ -1,13 +1,127 @@
 [
   {
-    "description": "homePage Visualize",
+    "description": "home page visualize",
     "data": [
       {
-        "test": "verify element in home page display",
+        "test": "verify navbar display",
         "data": [
           {
-            "description": "homePage Visualize",
-            "test": "verify element in home page display",
+            "description": "home page visualize",
+            "test": "verify navbar display",
+            "tag": "btnProduct",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.92"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkElement",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\btnProduct--1555x883.png",
+              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\btnProduct--1555x883.png",
+              "fileName": "btnProduct--1555x883.png",
+              "size": {
+                "actual": {
+                  "height": 16,
+                  "width": 58
+                },
+                "baseline": {
+                  "height": 16,
+                  "width": 58
+                }
+              }
+            },
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
+          },
+          {
+            "description": "home page visualize",
+            "test": "verify navbar display",
+            "tag": "btnToCartPage",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.92"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkElement",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\btnToCartPage--1555x883.png",
+              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\btnToCartPage--1555x883.png",
+              "fileName": "btnToCartPage--1555x883.png",
+              "size": {
+                "actual": {
+                  "height": 16,
+                  "width": 51
+                },
+                "baseline": {
+                  "height": 16,
+                  "width": 51
+                }
+              }
+            },
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
+          },
+          {
+            "description": "home page visualize",
+            "test": "verify navbar display",
+            "tag": "btnToLoginPage",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.92"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkElement",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\btnToLoginPage--1555x883.png",
+              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\btnToLoginPage--1555x883.png",
+              "fileName": "btnToLoginPage--1555x883.png",
+              "size": {
+                "actual": {
+                  "height": 16,
+                  "width": 63
+                },
+                "baseline": {
+                  "height": 16,
+                  "width": 63
+                }
+              }
+            },
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
+          },
+          {
+            "description": "home page visualize",
+            "test": "verify navbar display",
             "tag": "navbar",
             "instanceData": {
               "browser": {
@@ -42,11 +156,16 @@
             },
             "misMatchPercentage": "0.00",
             "rawMisMatchPercentage": 0
-          },
+          }
+        ]
+      },
+      {
+        "test": "verify banner display",
+        "data": [
           {
-            "description": "homePage Visualize",
-            "test": "verify element in home page display",
-            "tag": "fullPage",
+            "description": "home page visualize",
+            "test": "verify banner display",
+            "tag": "imageInBanner",
             "instanceData": {
               "browser": {
                 "name": "chrome",
@@ -57,24 +176,24 @@
                 "version": "not-known"
               }
             },
-            "commandName": "checkFullPageScreen",
+            "commandName": "checkElement",
             "framework": "mocha",
             "boundingBoxes": {
               "diffBoundingBoxes": [],
               "ignoredBoxes": []
             },
             "fileData": {
-              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\fullPage--1051x798.png",
-              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\fullPage--1051x798.png",
-              "fileName": "fullPage--1051x798.png",
+              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\imageInBanner--1555x883.png",
+              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\imageInBanner--1555x883.png",
+              "fileName": "imageInBanner--1555x883.png",
               "size": {
                 "actual": {
-                  "height": 10034,
-                  "width": 1036
+                  "height": 526,
+                  "width": 616
                 },
                 "baseline": {
-                  "height": 10034,
-                  "width": 1036
+                  "height": 526,
+                  "width": 616
                 }
               }
             },
@@ -82,9 +201,9 @@
             "rawMisMatchPercentage": 0
           },
           {
-            "description": "homePage Visualize",
-            "test": "verify element in home page display",
-            "tag": "partialPage",
+            "description": "home page visualize",
+            "test": "verify banner display",
+            "tag": "promoBanner",
             "instanceData": {
               "browser": {
                 "name": "chrome",
@@ -95,79 +214,41 @@
                 "version": "not-known"
               }
             },
-            "commandName": "checkScreen",
+            "commandName": "checkElement",
             "framework": "mocha",
             "boundingBoxes": {
               "diffBoundingBoxes": [
                 {
                   "left": 0,
-                  "top": 0,
-                  "right": 1294,
-                  "bottom": 2
+                  "top": 381,
+                  "right": 5,
+                  "bottom": 450
                 }
               ],
               "ignoredBoxes": []
             },
             "fileData": {
-              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\partialPage--1051x798.png",
-              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\partialPage--1051x798.png",
-              "diffFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\diff\\desktop_chrome\\partialPage--1051x798.png",
-              "fileName": "partialPage--1051x798.png",
+              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\promoBanner--1555x883.png",
+              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\promoBanner--1555x883.png",
+              "diffFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\diff\\desktop_chrome\\promoBanner--1555x883.png",
+              "fileName": "promoBanner--1555x883.png",
               "size": {
                 "actual": {
-                  "height": 651,
-                  "width": 1036
+                  "height": 526,
+                  "width": 1232
                 },
                 "baseline": {
-                  "height": 651,
-                  "width": 1036
+                  "height": 526,
+                  "width": 1232
                 },
                 "diff": {
-                  "height": 651,
-                  "width": 1036
+                  "height": 526,
+                  "width": 1232
                 }
               }
             },
-            "misMatchPercentage": "0.37",
-            "rawMisMatchPercentage": 0.36855036855036855
-          },
-          {
-            "description": "homePage Visualize",
-            "test": "verify element in home page display",
-            "tag": "partialPage",
-            "instanceData": {
-              "browser": {
-                "name": "chrome",
-                "version": "130.0.6723.92"
-              },
-              "platform": {
-                "name": "windows",
-                "version": "not-known"
-              }
-            },
-            "commandName": "checkScreen",
-            "framework": "mocha",
-            "boundingBoxes": {
-              "diffBoundingBoxes": [],
-              "ignoredBoxes": []
-            },
-            "fileData": {
-              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\partialPage--1555x883.png",
-              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\partialPage--1555x883.png",
-              "fileName": "partialPage--1555x883.png",
-              "size": {
-                "actual": {
-                  "height": 736,
-                  "width": 1540
-                },
-                "baseline": {
-                  "height": 736,
-                  "width": 1540
-                }
-              }
-            },
-            "misMatchPercentage": "0.00",
-            "rawMisMatchPercentage": 0
+            "misMatchPercentage": "0.04",
+            "rawMisMatchPercentage": 0.041151857261279755
           }
         ]
       }

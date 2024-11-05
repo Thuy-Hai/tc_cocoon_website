@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio run ./wdio.conf.ts  --spec ./test/specs/search.specs.ts",
+    "selenium": "wdio run ./wdio.conf.seleniumgrid.ts",
+    "test": "wdio run ./wdio.conf.ts",
     "wdio": "wdio run ./wdio.conf.ts --spec ./test/specs/search.specs.ts",
     "visual": "wdio run ./wdio.conf.visual.ts --spec ./test/specs/home.specs.ts",
+    "lambda": "wdio run ./wdio.conf.lamda.ts",
     "report": "allure generate allure-results && allure open"
   },
   "keywords": [],
@@ -24,6 +26,7 @@
     "@wdio/visual-service": "^6.2.1",
     "chai": "^5.1.1",
     "wdio-chromedriver-service": "^8.1.1",
+    "wdio-lambdatest-service": "^3.0.1",
     "wdio-wait-for": "^3.0.11"
   },
   "dependencies": {

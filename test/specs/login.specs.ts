@@ -7,15 +7,15 @@ describe("Login function", () => {
   });
   it("verify login successfully with correct phone and password", async () => {
     await loginPage.login(loginData.correctPhoneAndPassword);
-    await loginPage.checkLoginSuccess();
+    await loginPage.checkLoginSuccessfully();
   });
   it("verify login failed with wrong phone number and correct password", async () => {
     await loginPage.login(loginData.wrongPhoneAndCorrectPassword);
-    await loginPage.checkLoginFail();
+    await loginPage.checkLoginFailed();
   });
   it("verify login failed with correct phone number and wrong password", async () => {
     await loginPage.login(loginData.correctPhoneAndWrongPassword);
-    await loginPage.checkLoginFail();
+    await loginPage.checkLoginFailed();
   });
   it("verify login failed with correct phone and invalid password  ", async () => {
     await loginPage.login(loginData.correctPhoneAndInvalidPassword);
@@ -27,20 +27,19 @@ describe("Login function", () => {
   });
   it("verify login failed with invalid phone and invalid password", async () => {
     await loginPage.login(loginData.invalidPhoneAnddPassword);
-    await loginPage.checkInvalidPasswordError();
-    await loginPage.checkInvalidPhoneError();
+    await loginPage.checkInvalidPasswordAndPhoneErrors();
   });
   it("verify login successful and remember password", async () => {
-    await loginPage.loginwithRememberPassword(loginData.correctPhoneAndPassword);
-    await loginPage.checkLoginWithRemenberPasswordSuccess();
+    await loginPage.loginAndRememberPassword(loginData.correctPhoneAndPassword);
+    await loginPage.checkLoginAndRemenberPasswordSuccessfully();
   });
   it("verify show password when login", async () => {
     await loginPage.showPassword(loginData.correctPhoneAndPassword.password);
-    await loginPage.checkShowPasswordSuccess();
+    await loginPage.checkShowPasswordSuccessfully();
   });
   it("verify show a forgot password page", async () => {
     await loginPage.forgotPassword();
-    await loginPage.checkForgotPasswordSuccess();
+    await loginPage.checkForgotPasswordSuccessfully();
   });
 
   afterEach("Clear Session Data",  () => {
