@@ -3,7 +3,7 @@ import loginData from "../data/loginData";
 
 describe("Login function", () => {
   beforeEach("Open Home Page", () => {
-     loginPage.open();
+    loginPage.open();
   });
   it("verify login successfully with correct phone and password", async () => {
     await loginPage.login(loginData.correctPhoneAndPassword);
@@ -42,7 +42,9 @@ describe("Login function", () => {
     await loginPage.checkForgotPasswordSuccessfully();
   });
 
-  afterEach("Clear Session Data",  () => {
+
+
+  afterEach("Clear cookies data", () => {
     loginPage.clearData();
   });
 });

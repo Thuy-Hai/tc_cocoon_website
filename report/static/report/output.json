@@ -3,16 +3,16 @@
     "description": "home page visualize",
     "data": [
       {
-        "test": "verify navbar display",
+        "test": "should compare a element navbar successful with baseline",
         "data": [
           {
             "description": "home page visualize",
-            "test": "verify navbar display",
+            "test": "should compare a element navbar successful with baseline",
             "tag": "btnProduct",
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.92"
+                "version": "130.0.6723.93"
               },
               "platform": {
                 "name": "windows",
@@ -47,12 +47,12 @@
           },
           {
             "description": "home page visualize",
-            "test": "verify navbar display",
+            "test": "should compare a element navbar successful with baseline",
             "tag": "btnToCartPage",
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.92"
+                "version": "130.0.6723.93"
               },
               "platform": {
                 "name": "windows",
@@ -87,12 +87,12 @@
           },
           {
             "description": "home page visualize",
-            "test": "verify navbar display",
+            "test": "should compare a element navbar successful with baseline",
             "tag": "btnToLoginPage",
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.92"
+                "version": "130.0.6723.93"
               },
               "platform": {
                 "name": "windows",
@@ -127,12 +127,12 @@
           },
           {
             "description": "home page visualize",
-            "test": "verify navbar display",
+            "test": "should compare a element navbar successful with baseline",
             "tag": "navbar",
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.92"
+                "version": "130.0.6723.93"
               },
               "platform": {
                 "name": "windows",
@@ -168,16 +168,101 @@
         ]
       },
       {
-        "test": "verify banner display",
+        "test": "should compare a full page screenshot successful with baseline ",
         "data": [
           {
             "description": "home page visualize",
-            "test": "verify banner display",
+            "test": "should compare a full page screenshot successful with baseline ",
+            "tag": "full-page-tag",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.93"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkFullPageScreen",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "static\\report\\actual\\desktop_chrome\\full-page-tag--1051x798.png",
+              "baselineFilePath": "static\\report\\baseline\\desktop_chrome\\full-page-tag--1051x798.png",
+              "fileName": "full-page-tag--1051x798.png",
+              "size": {
+                "actual": {
+                  "height": 10034,
+                  "width": 1036
+                },
+                "baseline": {
+                  "height": 10034,
+                  "width": 1036
+                }
+              },
+              "original_actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\full-page-tag--1051x798.png",
+              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\full-page-tag--1051x798.png"
+            },
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
+          },
+          {
+            "description": "home page visualize",
+            "test": "should compare a full page screenshot successful with baseline ",
+            "tag": "full-page-tag",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.93"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkFullPageScreen",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "static\\report\\actual\\desktop_chrome\\full-page-tag--1555x883.png",
+              "baselineFilePath": "static\\report\\baseline\\desktop_chrome\\full-page-tag--1555x883.png",
+              "fileName": "full-page-tag--1555x883.png",
+              "size": {
+                "actual": {
+                  "height": 10084,
+                  "width": 1540
+                },
+                "baseline": {
+                  "height": 10084,
+                  "width": 1540
+                }
+              },
+              "original_actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\full-page-tag--1555x883.png",
+              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\full-page-tag--1555x883.png"
+            },
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
+          }
+        ]
+      },
+      {
+        "test": "should compare a element banner successful with baseline",
+        "data": [
+          {
+            "description": "home page visualize",
+            "test": "should compare a element banner successful with baseline",
             "tag": "imageInBanner",
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.92"
+                "version": "130.0.6723.93"
               },
               "platform": {
                 "name": "windows",
@@ -196,11 +281,11 @@
               "fileName": "imageInBanner--1555x883.png",
               "size": {
                 "actual": {
-                  "height": 526,
+                  "height": 484,
                   "width": 616
                 },
                 "baseline": {
-                  "height": 526,
+                  "height": 484,
                   "width": 616
                 }
               },
@@ -212,12 +297,12 @@
           },
           {
             "description": "home page visualize",
-            "test": "verify banner display",
+            "test": "should compare a element banner successful with baseline",
             "tag": "promoBanner",
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.92"
+                "version": "130.0.6723.93"
               },
               "platform": {
                 "name": "windows",
@@ -227,41 +312,28 @@
             "commandName": "checkElement",
             "framework": "mocha",
             "boundingBoxes": {
-              "diffBoundingBoxes": [
-                {
-                  "left": 0,
-                  "top": 381,
-                  "right": 5,
-                  "bottom": 450
-                }
-              ],
+              "diffBoundingBoxes": [],
               "ignoredBoxes": []
             },
             "fileData": {
               "actualFilePath": "static\\report\\actual\\desktop_chrome\\promoBanner--1555x883.png",
               "baselineFilePath": "static\\report\\baseline\\desktop_chrome\\promoBanner--1555x883.png",
-              "diffFilePath": "static\\report\\diff\\desktop_chrome\\promoBanner--1555x883.png",
               "fileName": "promoBanner--1555x883.png",
               "size": {
                 "actual": {
-                  "height": 526,
+                  "height": 484,
                   "width": 1232
                 },
                 "baseline": {
-                  "height": 526,
-                  "width": 1232
-                },
-                "diff": {
-                  "height": 526,
+                  "height": 484,
                   "width": 1232
                 }
               },
               "original_actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\promoBanner--1555x883.png",
-              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\promoBanner--1555x883.png",
-              "original_diffFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\diff\\desktop_chrome\\promoBanner--1555x883.png"
+              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\promoBanner--1555x883.png"
             },
-            "misMatchPercentage": "0.04",
-            "rawMisMatchPercentage": 0.041151857261279755
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
           }
         ]
       }

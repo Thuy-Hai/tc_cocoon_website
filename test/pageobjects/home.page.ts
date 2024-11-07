@@ -36,25 +36,21 @@ class HomePage extends Page {
     await this.checkBtnProductDisplay();
     await this.checkBtnToCartPageDisplay();
   }
-
   public async checkBtnToLoginPageDisplay() {
     const btnToLoginPage = await this.btnToLoginPage;
     const result = await browser.checkElement(btnToLoginPage, "btnToLoginPage");
     await expect(result).toBeLessThan(0.05);
   }
-
   public async checkBtnProductDisplay() {
     const btnProduct = await this.btnProduct;
     const result = await browser.checkElement(btnProduct, "btnProduct");
     await expect(result).toBeLessThan(0.05);
   }
-
   public async checkBtnToCartPageDisplay() {
     const btnToCartPage = await this.btnToCartPage;
     const result = await browser.checkElement(btnToCartPage, "btnToCartPage");
     await expect(result).toBeLessThan(0.05);
   }
-
   public async checkOverviewBannerDisplay() {
     await this.checkPromoBannerDisplay();
     await this.checkImageInBannerDisplay();
@@ -64,13 +60,15 @@ class HomePage extends Page {
     const result = await browser.checkElement(promoBanner, "promoBanner");
     await expect(result).toBeLessThan(0.05);
   }
-
   public async checkImageInBannerDisplay() {
     const imageInBanner = await this.imageInBanner;
     const result = await browser.checkElement(imageInBanner, "imageInBanner");
     await expect(result).toBeLessThan(0.05);
   }
-
+  public async checkTabbablePage() {
+    await browser.pause(10000);
+    await browser.saveTabbablePage("tabbable-page-tag");
+  }
   public open() {
     return super.openAndWait();
   }

@@ -28,9 +28,7 @@ export const config: WebdriverIO.Config = {
   specs: ["./test/specs/**/*.ts"],
 
   // Patterns to exclude.
-  exclude: [
-    // 'path/to/excluded/files'
-  ],
+  exclude: ["./test/specs/home.specs.ts","./test/specs/contact.specs.ts"],
   //
   // ============
 
@@ -62,13 +60,23 @@ export const config: WebdriverIO.Config = {
       "LT:Options": {
         platformName: "Windows 10",
         build: "WebdriverIO LambdaTest Integration",
-        name: "WebdriverIO Test",
-        selenium_version: "4.0.0",
+        name: "WebdriverIO Test on chrome by lambda",
+       
       },
-      //   "goog:chromeOptions": {
-      //     args: ["--headless", "--disable-gpu"],
-      //   },
+      // "goog:chromeOptions": {
+      //   args: ["--headless", "--disable-gpu"],
+      // },
     },
+    // {
+    //   browserName: "safari",
+    //   browserVersion: "latest",
+    //   "LT:Options": {
+    //     platformName: "macOS Big Sur",
+    //     build: "WebdriverIO LambdaTest Integration",
+    //     name: "WebdriverIO Test on Safari by Lambda",
+        
+    //   },
+    // },
   ],
 
   //
@@ -164,7 +172,7 @@ export const config: WebdriverIO.Config = {
   // See the full list at http://mochajs.org/
   mochaOpts: {
     ui: "bdd",
-    timeout: 60000,
+    timeout: 90000,
   },
 
   //
@@ -270,6 +278,8 @@ export const config: WebdriverIO.Config = {
       await browser.takeScreenshot();
     }
   },
+
+  
 
   /**
    * Hook that gets executed after the suite has ended

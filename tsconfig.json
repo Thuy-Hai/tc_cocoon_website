@@ -9,6 +9,7 @@
         ],
         "types": [
             "node",
+            "mocha",
             "@wdio/globals/types",
             "@wdio/mocha-framework",
             "@wdio/visual-service"
@@ -26,7 +27,7 @@
     },
     "include": [
         "test",
-        "wdio.conf.ts",
+        "wdio.conf.saucelab.ts",
         "wdio.conf.visual.ts", 
         "wdio.conf.seleniumgrid.ts",
         "wdio.conf.lamda.ts",

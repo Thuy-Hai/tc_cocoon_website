@@ -21,7 +21,4 @@ describe("search function", function () {
     await searchPage.searchBySuggestion();
     await searchPage.checkIfContainsProductName(searchData.listData.sussgestionData);
   });
-  afterEach("Clear Session Data", () => {
-    searchPage.clearData();
-  });
 });

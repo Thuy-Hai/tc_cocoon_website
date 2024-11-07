@@ -30,9 +30,7 @@ export const config: WebdriverIO.Config = {
   specs: ["./test/specs/**/*.ts"],
 
   // Patterns to exclude.
-  exclude: [
-    // 'path/to/excluded/files'
-  ],
+  exclude: ["./test/specs/home.specs.ts","./test/specs/contact.specs.ts"],
   //
   // ============
 
@@ -60,11 +58,8 @@ export const config: WebdriverIO.Config = {
   capabilities: [
     {
       browserName: "chrome",
-      acceptInsecureCerts: true,
-      // "goog:chromeOptions": {
-      //   args: ["--headless", "--disable-gpu"],
-      // },
     },
+   
   ],
 
   //

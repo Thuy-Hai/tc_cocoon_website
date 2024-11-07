@@ -35,15 +35,13 @@ class SearchPage extends Page {
   }
   public async checkMessageNotFoundDisplayed() {
     await this.messageNotFoundProduct.waitForDisplayed({ timeout: 5000 });
-    const isMessegeNotFoundDisplay =
-      await this.messageNotFoundProduct.isDisplayed();
+    const isMessegeNotFoundDisplay = await this.messageNotFoundProduct.isDisplayed();
     expect(isMessegeNotFoundDisplay).to.be.true;
   }
   public async checkInputIsEmpty() {
     const inputValue = await this.inputSearch.getValue();
     expect(inputValue).to.equal("");
-    const isMessegeNotFoundDisplay =
-      await this.messageNotFoundProduct.isDisplayed();
+    const isMessegeNotFoundDisplay = await this.messageNotFoundProduct.isDisplayed();
     expect(isMessegeNotFoundDisplay).to.be.false;
   }
   public async searchBySuggestion() {
@@ -53,9 +51,6 @@ class SearchPage extends Page {
   }
   public open() {
     return super.openAndWait();
-  }
-  public clearData() {
-    return super.clearData();
   }
 }
 export default new SearchPage();

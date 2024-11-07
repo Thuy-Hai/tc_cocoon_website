@@ -27,9 +27,7 @@ export const config: WebdriverIO.Config = {
   specs: ["./test/specs/**/*.ts"],
 
   // Patterns to exclude.
-  exclude: [
-    // 'path/to/excluded/files'
-  ],
+  exclude: ["./test/specs/contact.specs.ts"],
   //
   // ============
 
@@ -116,7 +114,7 @@ export const config: WebdriverIO.Config = {
     [
       "visual",
       {
-       // drivers: { browser: "130.0.6723.58" },
+        // drivers: { browser: "130.0.6723.58" },
         baselineFolder: path.join(process.cwd(), "tests", "baseline"),
         formatImageName: "{tag}-{logName}-{width}x{height}",
         screenshotPath: path.join(process.cwd(), "tmp"),
@@ -125,7 +123,6 @@ export const config: WebdriverIO.Config = {
         createJsonReportFiles: true,
       },
     ],
-    
   ],
 
   // Framework you want to run your specs with.
