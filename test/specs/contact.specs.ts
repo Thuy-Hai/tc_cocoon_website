@@ -5,7 +5,6 @@ describe("Contact function", function () {
   beforeEach("open homepage", async () => {
     await contactPage.open();
   });
-
   it("verify contact successful with valid infomation", async () => {
     await contactPage.contact(contactData.validInformation);
     await contactPage.ckeckContactSuccessful();
@@ -14,12 +13,10 @@ describe("Contact function", function () {
     await contactPage.contact(contactData.nameEmpty);
     await contactPage.checkContactFailedWithNameEmpty();
   });
-
   it("verify contact failed with  name too short", async () => {
     await contactPage.contact(contactData.nameTooShort);
     await contactPage.checkContactFailedWithNameTooShort();
   });
-
   after("Clear session", async () => {
     await contactPage.close();
   });

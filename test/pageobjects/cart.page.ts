@@ -4,6 +4,7 @@ import productData from "../data/productData";
 import loginPage from "./login.page";
 import loginData from "../data/loginData";
 import homePage from "./home.page";
+
 class CartPage extends Page {
   public get lnkToAllProduct() {
     return $("#tam-va-duong-the a");
@@ -43,7 +44,6 @@ class CartPage extends Page {
   public get txtTitle() {
     return $("div.title");
   }
-
   public get listNameProduct() {
     return $$("span.name.mr-2");
   }
@@ -61,10 +61,11 @@ class CartPage extends Page {
   }
   public async addToCartTwice() {
     await this.addToCartFromCatalog();
-    await this.checkAddToCartSuccessfully(productData.listTitleProduct.DuongThotNot);
+    await this.checkAddToCartSuccessfully(productData.listTitleProduct.duongThotNot);
     await this.closeCart();
     await this.btnAddToCard.click();
-    await this.checkAddToCartSuccessfully(productData.listTitleProduct.DuongThotNot);
+    await browser.pause(5000);
+    await this.checkAddToCartSuccessfully(productData.listTitleProduct.duongThotNot);
   }
   public async checkQuantityProduct(expectValue: number) {
     const qualityText = await this.txtQuatityProduct.getText();
@@ -99,7 +100,7 @@ class CartPage extends Page {
   }
   public async removeProductInCart() {
     await this.addToCardFromHomePage();
-    await this.checkAddToCartSuccessfully(productData.listTitleProduct.ComBoGoiXa);
+    await this.checkAddToCartSuccessfully(productData.listTitleProduct.comBoGoiXa);
     await this.btnRemoveProduct.waitForClickable();
     await this.btnRemoveProduct.click();
   }
@@ -111,7 +112,6 @@ class CartPage extends Page {
   public async cart() {
     await homePage.btnToCartPage.waitForClickable();
     await homePage.btnToCartPage.click();
-    
   }
   public async addToCardWithoutLogin() {
     await this.checkAccountNotLoggedIn();
@@ -124,7 +124,7 @@ class CartPage extends Page {
   public async productIsStillInCart() {
     await this.checkAccountNotLoggedIn();
     await this.addToCardFromHomePage();
-    await this.checkAddToCartSuccessfully(productData.listTitleProduct.ComBoGoiXa);
+    await this.checkAddToCartSuccessfully(productData.listTitleProduct.comBoGoiXa);
     await this.closeCart();
     await this.checkCountInCard(1);
   }

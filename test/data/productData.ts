@@ -1,7 +1,7 @@
 class ProductData {
     listTitleProduct = {
-        DuongThotNot: "Đường thốt nốt An Giang làm sạch da chết cơ thể 200ml",
-        ComBoGoiXa:"Combo gội xả bưởi không sulfate giảm gãy rụng tóc Cocoon",
+        duongThotNot: "Đường thốt nốt An Giang làm sạch da chết cơ thể 200ml",
+        comBoGoiXa:"Combo gội xả bưởi không sulfate giảm gãy rụng tóc Cocoon",
     }
 }
 

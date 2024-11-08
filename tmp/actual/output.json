@@ -160,6 +160,49 @@
         ]
       },
       {
+        "test": "should compare a footer successful with baseline",
+        "data": [
+          {
+            "description": "home page visualize",
+            "test": "should compare a footer successful with baseline",
+            "tag": "footer",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.117"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkElement",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\footer--1555x883.png",
+              "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\footer--1555x883.png",
+              "fileName": "footer--1555x883.png",
+              "size": {
+                "actual": {
+                  "height": 524,
+                  "width": 1232
+                },
+                "baseline": {
+                  "height": 524,
+                  "width": 1232
+                }
+              }
+            },
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
+          }
+        ]
+      },
+      {
         "test": "should compare a full page screenshot successful with baseline ",
         "data": [
           {
@@ -219,21 +262,33 @@
             "boundingBoxes": {
               "diffBoundingBoxes": [
                 {
-                  "left": 1876,
-                  "top": 2955,
-                  "right": 1889,
-                  "bottom": 2968
-                },
-                {
-                  "left": 1803,
+                  "left": 1917,
                   "top": 2924,
                   "right": 1924,
+                  "bottom": 2936
+                },
+                {
+                  "left": 1880,
+                  "top": 2924,
+                  "right": 1898,
                   "bottom": 2947
                 },
                 {
-                  "left": 1728,
+                  "left": 1823,
+                  "top": 2924,
+                  "right": 1873,
+                  "bottom": 2947
+                },
+                {
+                  "left": 1749,
                   "top": 2924,
                   "right": 1783,
+                  "bottom": 2947
+                },
+                {
+                  "left": 1682,
+                  "top": 2924,
+                  "right": 1708,
                   "bottom": 2947
                 },
                 {
@@ -243,15 +298,9 @@
                   "bottom": 919
                 },
                 {
-                  "left": 1631,
-                  "top": 2924,
-                  "right": 1653,
-                  "bottom": 2947
-                },
-                {
                   "left": 1606,
                   "top": 2924,
-                  "right": 1625,
+                  "right": 1646,
                   "bottom": 2947
                 },
                 {
@@ -261,73 +310,79 @@
                   "bottom": 2968
                 },
                 {
-                  "left": 1391,
+                  "left": 1521,
                   "top": 2924,
-                  "right": 1599,
-                  "bottom": 2948
-                },
-                {
-                  "left": 1298,
-                  "top": 2924,
-                  "right": 1372,
+                  "right": 1592,
                   "bottom": 2947
                 },
                 {
-                  "left": 1212,
+                  "left": 1430,
+                  "top": 2924,
+                  "right": 1504,
+                  "bottom": 2947
+                },
+                {
+                  "left": 1288,
+                  "top": 2924,
+                  "right": 1346,
+                  "bottom": 2947
+                },
+                {
+                  "left": 1249,
                   "top": 2924,
                   "right": 1282,
-                  "bottom": 2947
+                  "bottom": 2946
                 },
                 {
-                  "left": 1158,
-                  "top": 2924,
-                  "right": 1194,
-                  "bottom": 2947
+                  "left": 1209,
+                  "top": 2955,
+                  "right": 1222,
+                  "bottom": 2968
                 },
                 {
                   "left": 1113,
                   "top": 2924,
-                  "right": 1140,
-                  "bottom": 2946
-                },
-                {
-                  "left": 1080,
-                  "top": 2924,
-                  "right": 1106,
+                  "right": 1213,
                   "bottom": 2947
                 },
                 {
-                  "left": 1024,
-                  "top": 2955,
-                  "right": 1037,
-                  "bottom": 2968
+                  "left": 964,
+                  "top": 2924,
+                  "right": 1100,
+                  "bottom": 2949
+                },
+                {
+                  "left": 939,
+                  "top": 2924,
+                  "right": 958,
+                  "bottom": 2947
                 },
                 {
                   "left": 916,
                   "top": 2924,
-                  "right": 1066,
-                  "bottom": 2949
-                },
-                {
-                  "left": 891,
-                  "top": 2924,
-                  "right": 906,
+                  "right": 932,
                   "bottom": 2947
                 },
                 {
-                  "left": 793,
+                  "left": 802,
                   "top": 2924,
-                  "right": 875,
+                  "right": 907,
                   "bottom": 2949
                 },
                 {
-                  "left": 686,
+                  "left": 704,
                   "top": 2924,
-                  "right": 756,
+                  "right": 795,
+                  "bottom": 2948
+                },
+                {
+                  "left": 679,
+                  "top": 2924,
+                  "right": 696,
                   "bottom": 2947
                 },
                 {
-                  "left": 585,
+                  "left": 656,
                   "top": 2924,
                   "right": 672,
                   "bottom": 2947
@@ -335,13 +390,19 @@
                 {
                   "left": 546,
                   "top": 2924,
-                  "right": 573,
+                  "right": 646,
+                  "bottom": 2947
+                },
+                {
+                  "left": 498,
+                  "top": 2924,
+                  "right": 525,
                   "bottom": 2947
                 },
                 {
                   "left": 409,
                   "top": 2924,
-                  "right": 531,
+                  "right": 481,
                   "bottom": 2949
                 },
                 {
@@ -351,21 +412,27 @@
                   "bottom": 1203
                 },
                 {
-                  "left": 365,
+                  "left": 357,
+                  "top": 2955,
+                  "right": 370,
+                  "bottom": 2968
+                },
+                {
+                  "left": 351,
                   "top": 2924,
-                  "right": 392,
+                  "right": 399,
                   "bottom": 2947
                 },
                 {
-                  "left": 272,
+                  "left": 255,
                   "top": 2924,
-                  "right": 353,
-                  "bottom": 2949
+                  "right": 330,
+                  "bottom": 2947
                 },
                 {
-                  "left": 170,
+                  "left": 173,
                   "top": 2924,
-                  "right": 260,
+                  "right": 239,
                   "bottom": 2947
                 },
                 {
@@ -397,8 +464,8 @@
                 }
               }
             },
-            "misMatchPercentage": "6.99",
-            "rawMisMatchPercentage": 6.991420638068793
+            "misMatchPercentage": "7.00",
+            "rawMisMatchPercentage": 7.002416068659622
           }
         ]
       },
@@ -450,7 +517,7 @@
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.93"
+                "version": "130.0.6723.117"
               },
               "platform": {
                 "name": "windows",
@@ -460,12 +527,20 @@
             "commandName": "checkElement",
             "framework": "mocha",
             "boundingBoxes": {
-              "diffBoundingBoxes": [],
+              "diffBoundingBoxes": [
+                {
+                  "left": 0,
+                  "top": 0,
+                  "right": 1539,
+                  "bottom": 604
+                }
+              ],
               "ignoredBoxes": []
             },
             "fileData": {
               "actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\promoBanner--1555x883.png",
               "baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\promoBanner--1555x883.png",
+              "diffFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\diff\\desktop_chrome\\promoBanner--1555x883.png",
               "fileName": "promoBanner--1555x883.png",
               "size": {
                 "actual": {
@@ -475,11 +550,15 @@
                 "baseline": {
                   "height": 484,
                   "width": 1232
+                },
+                "diff": {
+                  "height": 484,
+                  "width": 1232
                 }
               }
             },
-            "misMatchPercentage": "0.00",
-            "rawMisMatchPercentage": 0
+            "misMatchPercentage": "99.27",
+            "rawMisMatchPercentage": 99.26618010089085
           }
         ]
       }

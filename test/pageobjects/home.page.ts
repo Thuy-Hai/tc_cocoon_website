@@ -13,19 +13,18 @@ class HomePage extends Page {
   public get btnProduct() {
     return $("button=Sản phẩm");
   }
-
   public get btnToCartPage() {
     return $("aria/Giỏ hàng");
   }
-
   public get promoBanner() {
     return $(".absolute.flex.flex-col.w-full.lg\\:flex-row.lg\\:h-full");
   }
-
+  public get footer() {
+    return $("#__layout > div > footer")
+  }
   public get imageInBanner() {
     return $(".image-block");
   }
-
   public get navbar() {
     return $("#navbar");
   }
@@ -63,6 +62,11 @@ class HomePage extends Page {
   public async checkImageInBannerDisplay() {
     const imageInBanner = await this.imageInBanner;
     const result = await browser.checkElement(imageInBanner, "imageInBanner");
+    await expect(result).toBeLessThan(0.05);
+  }
+  public async checkFotterDisplay() {
+    const footer = await this.footer;
+    const result = await browser.checkElement(footer, "footer");
     await expect(result).toBeLessThan(0.05);
   }
   public async checkTabbablePage() {

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "selenium": "wdio run ./wdio.conf.seleniumgrid.ts",
-    "wdio": "wdio run ./wdio.conf.saucelab.ts",
+    "saucelab": "wdio run ./wdio.conf.saucelab.ts",
     "visual": "wdio run ./wdio.conf.visual.ts --spec ./test/specs/home.specs.ts",
     "lambda": "wdio run ./wdio.conf.lamda.ts",
     "standalone": "mocha -r ts-node/register ./test/specs/contact.specs.ts",

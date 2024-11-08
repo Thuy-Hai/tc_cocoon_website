@@ -5,17 +5,13 @@ describe("Login function", () => {
   beforeEach("Open Home Page", () => {
     loginPage.open();
   });
-  it("verify login successfully with correct phone and password", async () => {
-    await loginPage.login(loginData.correctPhoneAndPassword);
-    await loginPage.checkLoginSuccessfully();
-  });
   it("verify login failed with wrong phone number and correct password", async () => {
     await loginPage.login(loginData.wrongPhoneAndCorrectPassword);
     await loginPage.checkLoginFailed();
   });
   it("verify login failed with correct phone number and wrong password", async () => {
     await loginPage.login(loginData.correctPhoneAndWrongPassword);
-    await loginPage.checkLoginFailed();
+    await loginPage.checkLoginFailed();//message 
   });
   it("verify login failed with correct phone and invalid password  ", async () => {
     await loginPage.login(loginData.correctPhoneAndInvalidPassword);
@@ -31,20 +27,21 @@ describe("Login function", () => {
   });
   it("verify login successful and remember password", async () => {
     await loginPage.loginAndRememberPassword(loginData.correctPhoneAndPassword);
-    await loginPage.checkLoginAndRemenberPasswordSuccessfully();
+    await loginPage.checkLoginAndRememberPasswordSuccessfully();
   });
   it("verify show password when login", async () => {
     await loginPage.showPassword(loginData.correctPhoneAndPassword.password);
     await loginPage.checkShowPasswordSuccessfully();
   });
-  it("verify show a forgot password page", async () => {
+  it("verify show forgot password page", async () => {
     await loginPage.forgotPassword();
     await loginPage.checkForgotPasswordSuccessfully();
   });
-
-
-
-  afterEach("Clear cookies data", () => {
+  it("verify login successfully with correct phone and password", async () => {
+    await loginPage.login(loginData.correctPhoneAndPassword);
+    await loginPage.checkLoginSuccessfully();
+  });
+  afterEach("Clear data", () => {
     loginPage.clearData();
   });
 });

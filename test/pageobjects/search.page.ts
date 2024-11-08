@@ -11,9 +11,7 @@ class SearchPage extends Page {
     return $("div.animate-fade-in.mt-4");
   }
   public get messageNotFoundProduct() {
-    return $(
-      "div=Thật không may, chúng tôi không thể tìm thấy bất kỳ kết quả nào cho tìm kiếm của bạn."
-    );
+    return $( "div=Thật không may, chúng tôi không thể tìm thấy bất kỳ kết quả nào cho tìm kiếm ");
   }
   public get txtSuggestion() {
     return $("aria/Nước tẩy trang");
@@ -21,8 +19,6 @@ class SearchPage extends Page {
   public get txtTitleSearch() {
     return $("aria/Nhập từ khóa bạn muốn tìm kiếm");
   }
-
- 
   public async searchProduct(input: string) {
     await this.iconSearch.waitForClickable({ timeout: 10000 });
     await this.iconSearch.click();

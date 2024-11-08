@@ -12,7 +12,7 @@
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.93"
+                "version": "130.0.6723.117"
               },
               "platform": {
                 "name": "windows",
@@ -52,7 +52,7 @@
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.93"
+                "version": "130.0.6723.117"
               },
               "platform": {
                 "name": "windows",
@@ -92,7 +92,7 @@
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.93"
+                "version": "130.0.6723.117"
               },
               "platform": {
                 "name": "windows",
@@ -132,7 +132,7 @@
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.93"
+                "version": "130.0.6723.117"
               },
               "platform": {
                 "name": "windows",
@@ -161,6 +161,51 @@
               },
               "original_actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\navbar--1555x883.png",
               "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\navbar--1555x883.png"
+            },
+            "misMatchPercentage": "0.00",
+            "rawMisMatchPercentage": 0
+          }
+        ]
+      },
+      {
+        "test": "should compare a footer successful with baseline",
+        "data": [
+          {
+            "description": "home page visualize",
+            "test": "should compare a footer successful with baseline",
+            "tag": "footer",
+            "instanceData": {
+              "browser": {
+                "name": "chrome",
+                "version": "130.0.6723.117"
+              },
+              "platform": {
+                "name": "windows",
+                "version": "not-known"
+              }
+            },
+            "commandName": "checkElement",
+            "framework": "mocha",
+            "boundingBoxes": {
+              "diffBoundingBoxes": [],
+              "ignoredBoxes": []
+            },
+            "fileData": {
+              "actualFilePath": "static\\report\\actual\\desktop_chrome\\footer--1555x883.png",
+              "baselineFilePath": "static\\report\\baseline\\desktop_chrome\\footer--1555x883.png",
+              "fileName": "footer--1555x883.png",
+              "size": {
+                "actual": {
+                  "height": 524,
+                  "width": 1232
+                },
+                "baseline": {
+                  "height": 524,
+                  "width": 1232
+                }
+              },
+              "original_actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\footer--1555x883.png",
+              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\footer--1555x883.png"
             },
             "misMatchPercentage": "0.00",
             "rawMisMatchPercentage": 0
@@ -217,7 +262,7 @@
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.93"
+                "version": "130.0.6723.117"
               },
               "platform": {
                 "name": "windows",
@@ -227,12 +272,194 @@
             "commandName": "checkFullPageScreen",
             "framework": "mocha",
             "boundingBoxes": {
-              "diffBoundingBoxes": [],
+              "diffBoundingBoxes": [
+                {
+                  "left": 1917,
+                  "top": 2924,
+                  "right": 1924,
+                  "bottom": 2936
+                },
+                {
+                  "left": 1880,
+                  "top": 2924,
+                  "right": 1898,
+                  "bottom": 2947
+                },
+                {
+                  "left": 1823,
+                  "top": 2924,
+                  "right": 1873,
+                  "bottom": 2947
+                },
+                {
+                  "left": 1749,
+                  "top": 2924,
+                  "right": 1783,
+                  "bottom": 2947
+                },
+                {
+                  "left": 1682,
+                  "top": 2924,
+                  "right": 1708,
+                  "bottom": 2947
+                },
+                {
+                  "left": 0,
+                  "top": 164,
+                  "right": 1924,
+                  "bottom": 919
+                },
+                {
+                  "left": 1606,
+                  "top": 2924,
+                  "right": 1646,
+                  "bottom": 2947
+                },
+                {
+                  "left": 1550,
+                  "top": 2955,
+                  "right": 1563,
+                  "bottom": 2968
+                },
+                {
+                  "left": 1521,
+                  "top": 2924,
+                  "right": 1592,
+                  "bottom": 2947
+                },
+                {
+                  "left": 1430,
+                  "top": 2924,
+                  "right": 1504,
+                  "bottom": 2947
+                },
+                {
+                  "left": 1288,
+                  "top": 2924,
+                  "right": 1346,
+                  "bottom": 2947
+                },
+                {
+                  "left": 1249,
+                  "top": 2924,
+                  "right": 1282,
+                  "bottom": 2946
+                },
+                {
+                  "left": 1209,
+                  "top": 2955,
+                  "right": 1222,
+                  "bottom": 2968
+                },
+                {
+                  "left": 1113,
+                  "top": 2924,
+                  "right": 1213,
+                  "bottom": 2947
+                },
+                {
+                  "left": 964,
+                  "top": 2924,
+                  "right": 1100,
+                  "bottom": 2949
+                },
+                {
+                  "left": 939,
+                  "top": 2924,
+                  "right": 958,
+                  "bottom": 2947
+                },
+                {
+                  "left": 916,
+                  "top": 2924,
+                  "right": 932,
+                  "bottom": 2947
+                },
+                {
+                  "left": 802,
+                  "top": 2924,
+                  "right": 907,
+                  "bottom": 2949
+                },
+                {
+                  "left": 704,
+                  "top": 2924,
+                  "right": 795,
+                  "bottom": 2948
+                },
+                {
+                  "left": 679,
+                  "top": 2924,
+                  "right": 696,
+                  "bottom": 2947
+                },
+                {
+                  "left": 656,
+                  "top": 2924,
+                  "right": 672,
+                  "bottom": 2947
+                },
+                {
+                  "left": 546,
+                  "top": 2924,
+                  "right": 646,
+                  "bottom": 2947
+                },
+                {
+                  "left": 498,
+                  "top": 2924,
+                  "right": 525,
+                  "bottom": 2947
+                },
+                {
+                  "left": 409,
+                  "top": 2924,
+                  "right": 481,
+                  "bottom": 2949
+                },
+                {
+                  "left": 0,
+                  "top": 1084,
+                  "right": 1924,
+                  "bottom": 1203
+                },
+                {
+                  "left": 357,
+                  "top": 2955,
+                  "right": 370,
+                  "bottom": 2968
+                },
+                {
+                  "left": 351,
+                  "top": 2924,
+                  "right": 399,
+                  "bottom": 2947
+                },
+                {
+                  "left": 255,
+                  "top": 2924,
+                  "right": 330,
+                  "bottom": 2947
+                },
+                {
+                  "left": 173,
+                  "top": 2924,
+                  "right": 239,
+                  "bottom": 2947
+                },
+                {
+                  "left": 0,
+                  "top": 2924,
+                  "right": 162,
+                  "bottom": 2948
+                }
+              ],
               "ignoredBoxes": []
             },
             "fileData": {
               "actualFilePath": "static\\report\\actual\\desktop_chrome\\full-page-tag--1555x883.png",
               "baselineFilePath": "static\\report\\baseline\\desktop_chrome\\full-page-tag--1555x883.png",
+              "diffFilePath": "static\\report\\diff\\desktop_chrome\\full-page-tag--1555x883.png",
               "fileName": "full-page-tag--1555x883.png",
               "size": {
                 "actual": {
@@ -242,13 +469,18 @@
                 "baseline": {
                   "height": 10084,
                   "width": 1540
+                },
+                "diff": {
+                  "height": 10084,
+                  "width": 1540
                 }
               },
               "original_actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\full-page-tag--1555x883.png",
-              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\full-page-tag--1555x883.png"
+              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\full-page-tag--1555x883.png",
+              "original_diffFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\diff\\desktop_chrome\\full-page-tag--1555x883.png"
             },
-            "misMatchPercentage": "0.00",
-            "rawMisMatchPercentage": 0
+            "misMatchPercentage": "7.00",
+            "rawMisMatchPercentage": 7.002416068659622
           }
         ]
       },
@@ -302,7 +534,7 @@
             "instanceData": {
               "browser": {
                 "name": "chrome",
-                "version": "130.0.6723.93"
+                "version": "130.0.6723.117"
               },
               "platform": {
                 "name": "windows",
@@ -312,12 +544,20 @@
             "commandName": "checkElement",
             "framework": "mocha",
             "boundingBoxes": {
-              "diffBoundingBoxes": [],
+              "diffBoundingBoxes": [
+                {
+                  "left": 0,
+                  "top": 0,
+                  "right": 1539,
+                  "bottom": 604
+                }
+              ],
               "ignoredBoxes": []
             },
             "fileData": {
               "actualFilePath": "static\\report\\actual\\desktop_chrome\\promoBanner--1555x883.png",
               "baselineFilePath": "static\\report\\baseline\\desktop_chrome\\promoBanner--1555x883.png",
+              "diffFilePath": "static\\report\\diff\\desktop_chrome\\promoBanner--1555x883.png",
               "fileName": "promoBanner--1555x883.png",
               "size": {
                 "actual": {
@@ -327,13 +567,18 @@
                 "baseline": {
                   "height": 484,
                   "width": 1232
+                },
+                "diff": {
+                  "height": 484,
+                  "width": 1232
                 }
               },
               "original_actualFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\actual\\desktop_chrome\\promoBanner--1555x883.png",
-              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\promoBanner--1555x883.png"
+              "original_baselineFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tests\\baseline\\desktop_chrome\\promoBanner--1555x883.png",
+              "original_diffFilePath": "D:\\FPT\\AutoTest\\wdio_cocoon\\tmp\\diff\\desktop_chrome\\promoBanner--1555x883.png"
             },
-            "misMatchPercentage": "0.00",
-            "rawMisMatchPercentage": 0
+            "misMatchPercentage": "99.27",
+            "rawMisMatchPercentage": 99.26618010089085
           }
         ]
       }

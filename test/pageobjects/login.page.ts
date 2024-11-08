@@ -5,10 +5,10 @@ import { expect } from "chai";
 import loginData from "../data/loginData";
 
 class LoginPage extends Page {
-  public get inputPhoneElement() {
+  public get inputPhone() {
     return $('input[name="phone"]');
   }
-  public get inputPasswordElement() {
+  public get inputPassword() {
     return $('input[name="password"]');
   }
   public get btnLogin() {
@@ -18,15 +18,12 @@ class LoginPage extends Page {
     return $("span=Tài khoản không tồn tại hoặc sai mật khẩu.");
   }
   public get invalidPasswordError() {
-    return $(
-      "span=Vui lòng nhập mật khẩu có ít nhất 8 ký tự, ít nhất 1 ký tự hoa, 1 ký tự thường và 1 số!"
-    );
+    return $("span=Vui lòng nhập mật khẩu có ít nhất 8 ký tự, ít nhất 1 ký tự hoa, 1 ký tự thường và 1 số!");
   }
   public get invalidPhoneError() {
     return $("span=Vui lòng nhập số điện thoại hợp lệ!");
   }
-
-  public get rememberMeCheckbox() {
+  public get checkboxRememberMe () {
     return $("[data-v-4a114c7c]");
   }
   public get iconShowPassword() {
@@ -42,10 +39,10 @@ class LoginPage extends Page {
     return $("span.title");
   }
   public async inputData(phone: string, password: string) {
-    await (await homePage.btnToLoginPage).waitForClickable({ timeout: 15000 });
+    await homePage.btnToLoginPage.waitForClickable({ timeout: 15000 });
     await homePage.btnToLoginPage.click();
-    await this.inputPhoneElement.setValue(phone);
-    await this.inputPasswordElement.setValue(password);
+    await this.inputPhone.setValue(phone);
+    await this.inputPassword.setValue(password);
   }
   public async login({ phone, password }: { phone: string; password: string }) {
     await this.inputData(phone, password);
@@ -74,7 +71,7 @@ class LoginPage extends Page {
   }
   public async loginAndRememberPassword({phone, password,}: {phone: string;password: string;}) {
     await this.inputData(phone, password);
-    await this.rememberMeCheckbox.click();
+    await this.checkboxRememberMe.click();
     await this.btnLogin.click();
     await this.checkLoginSuccessfully();
   }
@@ -83,23 +80,23 @@ class LoginPage extends Page {
     await homePage.lnkAccountInfo.click();
     await homePage.btnLogout.click();
   }
-  public async checkLoginAndRemenberPasswordSuccessfully() {
+  public async checkLoginAndRememberPasswordSuccessfully() {
     await this.logout();
     await homePage.btnToLoginPage.click();
-    const phone = await this.inputPhoneElement.getValue();
-    const password = await this.inputPasswordElement.getValue();
+    const phone = await this.inputPhone.getValue();
+    const password = await this.inputPassword.getValue();
     expect(phone).to.equal(loginData.correctPhoneAndPassword.phone);
     expect(password).to.equal(loginData.correctPhoneAndPassword.password);
   }
   public async showPassword(password: string) {
     await homePage.btnToLoginPage.waitForDisplayed({ timeout: 15000 });
     await homePage.btnToLoginPage.click();
-    await this.inputPasswordElement.setValue(password);
+    await this.inputPassword.setValue(password);
+    expect(await this.inputPassword.getAttribute("type")).to.equal("password");
+    await this.iconShowPassword.click();
   }
   public async checkShowPasswordSuccessfully() {
-    expect(await this.inputPasswordElement.getAttribute("type")).to.equal("password");
-    await this.iconShowPassword.click();
-    expect(await this.inputPasswordElement.getAttribute("type")).to.equal("text");
+    expect(await this.inputPassword.getAttribute("type")).to.equal("text");
   }
   public async forgotPassword() {
     await homePage.btnToLoginPage.waitForClickable({ timeout: 15000 });

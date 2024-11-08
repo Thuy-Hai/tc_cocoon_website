@@ -22,7 +22,7 @@ jobs:
       #   env:
       #     SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
       #     SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-      #   run: npm run wdio
+      #   run: npm run saucelab
       # - name: run visual testing
       #   run: npm run visual
       - uses: actions/upload-artifact@v4
