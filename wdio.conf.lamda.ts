@@ -63,9 +63,9 @@ export const config: WebdriverIO.Config = {
         name: "WebdriverIO Test on chrome by lambda",
        
       },
-      // "goog:chromeOptions": {
-      //   args: ["--headless", "--disable-gpu"],
-      // },
+      "goog:chromeOptions": {
+        args: ["--headless", "--disable-gpu"],
+      },
     },
     // {
     //   browserName: "safari",
