@@ -10,11 +10,11 @@ export default class Page {
   public async clearData() {
     try {
       await browser.execute(() => localStorage.clear());
-      console.log("Đã xóa localStorage.");
+      console.log("deleted localStorage.");
       await browser.deleteCookies();
-      console.log("Đã xóa cookies.");
+      console.log("deleted cookies.");
     } catch (error) {
-      console.error("Lỗi trong quá trình xóa dữ liệu:", error);
+      console.error("error when delete data:", error);
     }
   }
 }

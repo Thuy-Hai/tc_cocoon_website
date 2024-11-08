@@ -2,6 +2,7 @@ import { $ } from "@wdio/globals";
 import Page from "./page";
 import homePage from "./home.page";
 import { expect } from "chai";
+import loginData from "../data/loginData";
 
 class LoginPage extends Page {
   public get inputPhoneElement() {
@@ -35,13 +36,13 @@ class LoginPage extends Page {
     return $(".icon-eye-slash");
   }
   public get lnkForgotPassword() {
-    return $(".forgot-password");
+    return $("#__layout > div > header > div:nth-child(5) > div > div > form > div.flex.flex-row.items-center.mb-3.justify-end.h-4 > span");
   }
   public get txtTitleForgotPassword() {
     return $("span.title");
   }
   public async inputData(phone: string, password: string) {
-    await homePage.btnToLoginPage.waitForDisplayed({ timeout: 15000 });
+    await (await homePage.btnToLoginPage).waitForClickable({ timeout: 15000 });
     await homePage.btnToLoginPage.click();
     await this.inputPhoneElement.setValue(phone);
     await this.inputPasswordElement.setValue(password);
@@ -87,8 +88,8 @@ class LoginPage extends Page {
     await homePage.btnToLoginPage.click();
     const phone = await this.inputPhoneElement.getValue();
     const password = await this.inputPasswordElement.getValue();
-    expect(phone).to.equal("0917697809");
-    expect(password).to.equal("Hop1010ly@");
+    expect(phone).to.equal(loginData.correctPhoneAndPassword.phone);
+    expect(password).to.equal(loginData.correctPhoneAndPassword.password);
   }
   public async showPassword(password: string) {
     await homePage.btnToLoginPage.waitForDisplayed({ timeout: 15000 });

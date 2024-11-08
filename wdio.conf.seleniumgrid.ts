@@ -30,7 +30,7 @@ export const config: WebdriverIO.Config = {
   specs: ["./test/specs/**/*.ts"],
 
   // Patterns to exclude.
-  exclude: ["./test/specs/home.specs.ts","./test/specs/contact.specs.ts"],
+  exclude: ["./test/specs/home.specs.ts", "./test/specs/contact.specs.ts"],
   //
   // ============
 
@@ -59,7 +59,6 @@ export const config: WebdriverIO.Config = {
     {
       browserName: "chrome",
     },
-   
   ],
 
   //

@@ -64,7 +64,6 @@ class CartPage extends Page {
     await this.checkAddToCartSuccessfully(productData.listTitleProduct.DuongThotNot);
     await this.closeCart();
     await this.btnAddToCard.click();
-    await browser.pause(5000);
     await this.checkAddToCartSuccessfully(productData.listTitleProduct.DuongThotNot);
   }
   public async checkQuantityProduct(expectValue: number) {
