@@ -13,7 +13,7 @@ describe("Contact function", function () {
     await contactPage.contact(contactData.nameEmpty);
     await contactPage.checkContactFailedWithNameEmpty();
   });
-  it("verify contact failed with  name too short", async () => {
+  it("verify contact failed with name too short", async () => {
     await contactPage.contact(contactData.nameTooShort);
     await contactPage.checkContactFailedWithNameTooShort();
   });
