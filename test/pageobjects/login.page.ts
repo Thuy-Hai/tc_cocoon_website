@@ -33,7 +33,7 @@ class LoginPage extends Page {
     return $(".icon-eye-slash");
   }
   public get lnkForgotPassword() {
-    return $("#__layout > div > header > div:nth-child(5) > div > div > form > div.flex.flex-row.items-center.mb-3.justify-end.h-4 > span");
+    return $("span=Quên mật khẩu?");
   }
   public get txtTitleForgotPassword() {
     return $("span.title");

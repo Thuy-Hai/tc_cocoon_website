@@ -16,13 +16,13 @@ class ContactPage {
     return this.browser.$('input[name="name"]');
   }
   public get inputPhoneElement() {
-    return this.browser.$('//*[@id="__layout"]/div/header/div[6]/div/div/div/form/div[1]/div[2]/div/input');
+    return this.browser.$('input[name="phone"]');
   }
   public get inputEmailElement() {
     return this.browser.$('input[name="email"]');
   }
   public get inputQuestionElement() {
-    return this.browser.$('//*[@id="__layout"]/div/header/div[6]/div/div/div/form/div[3]/div/textarea');
+    return this.browser.$('input[name="question"]');
   }
   public get btnContact() {
     return this.browser.$("button=Gửi COCOON");
