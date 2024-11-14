@@ -3,6 +3,7 @@ export const config: WebdriverIO.Config = {
   hostname: "hub.lambdatest.com",
   port: 80,
   path: "/wd/hub",
+  /////////////////
   // ====================
   // Runner Configuration
   // ====================
